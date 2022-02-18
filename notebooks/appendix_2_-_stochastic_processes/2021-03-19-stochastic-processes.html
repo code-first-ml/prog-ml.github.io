@@ -98,6 +98,18 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Probability Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../probability/random-variable.html">
+   Coin Toss
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Bayesian ML
  </span>
 </p>
@@ -27025,16 +27037,16 @@ gCnVfoYD/3a7EUpFCi1gSrWfYcBXbjdCqUihBUyp9hMDHCMi2SKS7nZjlPI6LWBKtZ+ZwOXANuwt\
 </div></div>
 </div>
 <p>Let’s check for expected value and variance of <span class="math notranslate nohighlight">\(f(t)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-a5cdd4d1-a2dc-4452-9863-4a6b63186321">
-<span class="eqno">(37)<a class="headerlink" href="#equation-a5cdd4d1-a2dc-4452-9863-4a6b63186321" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d1af0551-d606-4fb3-b5b0-3681a87e21b4">
+<span class="eqno">(37)<a class="headerlink" href="#equation-d1af0551-d606-4fb3-b5b0-3681a87e21b4" title="Permalink to this equation">¶</a></span>\[\begin{align}
 f(t) &amp;= f(t-1) + I, \text{   where, } I \text{ takes value 1 or -1 with equal probability}\\
 \mathbb{E}(f(t)) &amp;= \mathbb{E}(f(t-1)) + \mathbb{E}(I)\\
                  &amp;= \sum\limits_{time=0}^{t}\mathbb{E}(I)\\
 \mathbb{E}(f(t)) &amp;= 0
 \end{align}\]</div>
 <p>And, variance</p>
-<div class="amsmath math notranslate nohighlight" id="equation-36ae0f08-0bf1-438d-bc50-92721e91f796">
-<span class="eqno">(38)<a class="headerlink" href="#equation-36ae0f08-0bf1-438d-bc50-92721e91f796" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0d699760-b533-460b-8937-6a45e8fb871c">
+<span class="eqno">(38)<a class="headerlink" href="#equation-0d699760-b533-460b-8937-6a45e8fb871c" title="Permalink to this equation">¶</a></span>\[\begin{align}
 V(f(t)) &amp;= \sum\limits_{T=0}^{t}V(I)\\
         &amp;= \sum\limits_{T=0}^{t}(\mathbb{E}(I^2) - (\mathbb{E}(I))^2\\
         &amp;= \sum\limits_{T=0}^{t}\mathbb{E}(I^2)\\
