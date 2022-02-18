@@ -396,12 +396,31 @@
                 
   <div class="section" id="coin-toss">
 <h1>Coin Toss<a class="headerlink" href="#coin-toss" title="Permalink to this headline">¶</a></h1>
+<p>A lot of this material is inspired by:</p>
+<ol class="simple">
+<li><p>Wiki article on Random Variables</p></li>
+<li><p>Khan academy videos</p></li>
+<li><p>MIT OCW course</p></li>
+</ol>
 <p>Assume you toss a coin once, the coin can land either as heads or tails. The outcome is unknown before the throw.</p>
 <div class="admonition-sample-space admonition">
 <p class="admonition-title">Sample Space</p>
-<p>The sample space is the possible outcomes of the experiment can be denoted as: <span class="math notranslate nohighlight">\(\Omega = \{H, T\}\)</span></p>
+<p>The sample space is the possible outcomes of the experiment. For the coin toss experiment, we can denote the sample space as: <span class="math notranslate nohighlight">\(\Omega = \{H, T\}\)</span></p>
 </div>
-<p>Now, let us say that if the coin lands as Heads, we win 1\<span class="math notranslate nohighlight">\( and we win 0\\\)</span> if the coin lands as Tails. We can associate a function <span class="math notranslate nohighlight">\(X\)</span> with the experiment such that X(Heads) = 1 and X(Tails) = 0</p>
+<p>Now, let us say that if the coin lands as Heads, we win 1$ and we win 0$ if the coin lands as Tails. We can associate a function <span class="math notranslate nohighlight">\(W\)</span> with the experiment such that W(Heads) = 1 and W(Tails) = 0</p>
+<div class="admonition-random-variable admonition">
+<p class="admonition-title">Random Variable</p>
+<p>A random variable is a function mapping the sample space (for example: <span class="math notranslate nohighlight">\(\Omega = \{H, T\}\)</span>) of an experiment to a measurement space <span class="math notranslate nohighlight">\(E = \{0, 1\}\)</span>. Random variables are represented using capital letters.</p>
+</div>
+<p>While we may have generally seen a random variable W associated with a coin toss taking the values 1 for Heads, 0 for Tails, we might have chosen any other values and still have a random variable. As an example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Y(\omega)= \begin{cases}100, &amp; \text { if } \omega=\text { heads } \\ -20, &amp; \text { if } \omega=\text { tails }\end{cases}
+\end{split}\]</div>
+<div class="admonition-discrete-random-variable admonition">
+<p class="admonition-title">Discrete Random Variable</p>
+<p>A discrete random variable can take discrete values. For example, W representing the money we win if we toss a coin randomly. Or, Y the top face of a dice when the dice is rolled.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
