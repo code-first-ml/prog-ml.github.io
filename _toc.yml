@@ -1,6 +1,9 @@
 format: jb-book
 root: intro
 parts:
+- caption: Probability Basics
+  chapters:
+  - file: notebooks/probability/random-variable
 - caption: Bayesian ML
   chapters:
   - file: notebooks/bayesian_ml/2021-03-23-bayesian-ml
