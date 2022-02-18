@@ -120,6 +120,18 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Continuous Probability Distributions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../probability/univariate-normal.html">
+   Drawing samples
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Bayesian ML
  </span>
 </p>
@@ -609,32 +621,32 @@
 <div class="section" id="a-quick-wrap-up-for-bayesian-linear-regression-blr">
 <h2>A quick wrap-up for Bayesian Linear Regression (BLR)<a class="headerlink" href="#a-quick-wrap-up-for-bayesian-linear-regression-blr" title="Permalink to this headline">¶</a></h2>
 <p>We have a feature matrix <span class="math notranslate nohighlight">\(X\)</span> and a target vector <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>. We want to obtain <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span> vector in such a way that the error <span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span> for the following equation is minimum.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0752d76c-9578-4e07-82b5-6a0826bee7fc">
-<span class="eqno">(31)<a class="headerlink" href="#equation-0752d76c-9578-4e07-82b5-6a0826bee7fc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a8b5419b-95c6-44da-af7f-8963a8c09c1b">
+<span class="eqno">(31)<a class="headerlink" href="#equation-a8b5419b-95c6-44da-af7f-8963a8c09c1b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 Y = X\boldsymbol{\theta} + \boldsymbol{\epsilon}
 \end{equation}\]</div>
 <p>Prior PDF for <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span> is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-22702823-9f72-4662-bcc0-b25dc4fbfbde">
-<span class="eqno">(32)<a class="headerlink" href="#equation-22702823-9f72-4662-bcc0-b25dc4fbfbde" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7763b16a-d100-472c-aae6-9547526773c5">
+<span class="eqno">(32)<a class="headerlink" href="#equation-7763b16a-d100-472c-aae6-9547526773c5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 p(\boldsymbol{\theta}) \sim \mathcal{N}(\mathbf{m}_0, S_0)
 \end{equation}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(S_0\)</span> is prior covariance matrix, and <span class="math notranslate nohighlight">\(\mathbf{m}_0\)</span> is prior mean.</p>
 <p>Posterier PDF can be given as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e3466a4-2f4e-4c58-8af3-94ed891c74db">
-<span class="eqno">(33)<a class="headerlink" href="#equation-4e3466a4-2f4e-4c58-8af3-94ed891c74db" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-08763602-7e2d-426e-9545-b89d587cf1ca">
+<span class="eqno">(33)<a class="headerlink" href="#equation-08763602-7e2d-426e-9545-b89d587cf1ca" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 p(\boldsymbol{\theta}|X,\mathbf{y}) \sim \mathcal{N}(\boldsymbol{\theta} | \mathbf{m}_n, S_n) \\
 S_n = (S_0^{-1} + \sigma_{mle}^{-2}X^TX) \\
 \mathbf{m}_n = S_n(S_0^{-1}\mathbf{m}_0+\sigma_{mle}^{-2}X^T\mathbf{y})
 \end{equation}\]</div>
 <p>Maximum likelihood estimation of <span class="math notranslate nohighlight">\(\sigma\)</span> can be calculated as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de5e4d28-5dde-406a-8e95-a90d364484be">
-<span class="eqno">(34)<a class="headerlink" href="#equation-de5e4d28-5dde-406a-8e95-a90d364484be" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ddeb5c46-d950-4904-b320-890f775f6253">
+<span class="eqno">(34)<a class="headerlink" href="#equation-ddeb5c46-d950-4904-b320-890f775f6253" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \theta_{mle} = (X^TX)^{-1}X^T\mathbf{y} \\
 \sigma_{mle} = ||\mathbf{y} - X\boldsymbol{\theta}_{mle}||
 \end{equation}\]</div>
 <p>Finally, predicted mean <span class="math notranslate nohighlight">\(\hat{\mathbf{y}}_{mean}\)</span> and predicted covariance matrix <span class="math notranslate nohighlight">\(\hat{Y}_{cov}\)</span> can be given as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7d1a1de7-141a-4ad8-aca7-a4ea4c3388a7">
-<span class="eqno">(35)<a class="headerlink" href="#equation-7d1a1de7-141a-4ad8-aca7-a4ea4c3388a7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-92b52c7d-2356-41bd-a7f3-1bf15f1277cc">
+<span class="eqno">(35)<a class="headerlink" href="#equation-92b52c7d-2356-41bd-a7f3-1bf15f1277cc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \hat{\mathbf{y}} \sim \mathcal{N}(\hat{\mathbf{y}}_{mean}, \hat{\mathbf{y}}_{cov}) \\
 \hat{\mathbf{y}}_{mean} = X\mathbf{m}_n \\
 \hat{Y}_{cov} = XS_nX^T
@@ -712,8 +724,8 @@ S_n = (S_0^{-1} + \sigma_{mle}^{-2}X^TX) \\
 <div class="section" id="creating-visualizing-dataset">
 <h2>Creating &amp; visualizing dataset<a class="headerlink" href="#creating-visualizing-dataset" title="Permalink to this headline">¶</a></h2>
 <p>To start with, let’s create a random dataset with degree 3 polynomial function with some added noise.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c6feb8b7-99ca-43bb-a5dd-6d977ac39ee5">
-<span class="eqno">(36)<a class="headerlink" href="#equation-c6feb8b7-99ca-43bb-a5dd-6d977ac39ee5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c9310ce5-fa48-4b1f-9413-6defaaed899c">
+<span class="eqno">(36)<a class="headerlink" href="#equation-c9310ce5-fa48-4b1f-9413-6defaaed899c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 Y = (5X^3 - 4X^2 + 3X - 2) + \mathcal{N}(0,1)
 \end{equation}\]</div>
 <div class="cell docutils container">
