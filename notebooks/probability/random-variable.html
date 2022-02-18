@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coin Toss &#8212; Prog-ML</title>
+    <title>Random Variables &#8212; Prog-ML</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Bayesian ML: Fundamentals" href="../bayesian_ml/2021-03-23-bayesian-ml.html" />
-    <link rel="prev" title="Prog-ML" href="../../intro.html" />
+    <link rel="next" title="Probability Mass Function (PMF)" href="pmf.html" />
+    <link rel="prev" title="Sample Space" href="sample-space.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -102,9 +102,19 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sample-space.html">
+   Sample Space
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Coin Toss
+   Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pmf.html">
+   Probability Mass Function (PMF)
   </a>
  </li>
 </ul>
@@ -383,7 +393,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Coin Toss</h1>
+                <h1>Random Variables</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -394,8 +404,8 @@
             
               <div>
                 
-  <div class="section" id="coin-toss">
-<h1>Coin Toss<a class="headerlink" href="#coin-toss" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="random-variables">
+<h1>Random Variables<a class="headerlink" href="#random-variables" title="Permalink to this headline">¶</a></h1>
 <p>A lot of this material is inspired by:</p>
 <ol class="simple">
 <li><p>Wiki article on Random Variables</p></li>
@@ -403,10 +413,7 @@
 <li><p>MIT OCW course</p></li>
 </ol>
 <p>Assume you toss a coin once, the coin can land either as heads or tails. The outcome is unknown before the throw.</p>
-<div class="admonition-sample-space admonition">
-<p class="admonition-title">Sample Space</p>
-<p>The sample space is the possible outcomes of the experiment. For the coin toss experiment, we can denote the sample space as: <span class="math notranslate nohighlight">\(\Omega = \{H, T\}\)</span></p>
-</div>
+<p>We can denote the sample space as: <span class="math notranslate nohighlight">\(\Omega = \{H, T\}\)</span></p>
 <p>Now, let us say that if the coin lands as Heads, we win 1$ and we win 0$ if the coin lands as Tails. We can associate a function <span class="math notranslate nohighlight">\(W\)</span> with the experiment such that W(Heads) = 1 and W(Tails) = 0</p>
 <div class="admonition-random-variable admonition">
 <p class="admonition-title">Random Variable</p>
@@ -417,9 +424,26 @@
 \[\begin{split}
 Y(\omega)= \begin{cases}100, &amp; \text { if } \omega=\text { heads } \\ -20, &amp; \text { if } \omega=\text { tails }\end{cases}
 \end{split}\]</div>
+<p>If our experiment is to roll two die (6-faced die) and note the sum of the numbers on the top side.</p>
+<p>The sample space for this example is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    S = \{&amp;(1, 1), (1, 2), \dots, (1, 6), \\
+          &amp;(2, 1), (2, 2), \dots, (2, 6), \\
+          &amp;\cdots, \cdots,  \cdots, \cdots \\
+          &amp;(6, 1), (6, 2), \dots, (6, 6) \}
+\end{align*}
+\end{split}\]</div>
+<p>Based on this sample space, we can see that our random variable <span class="math notranslate nohighlight">\(Z\)</span> denoting the sum of numbers on the top side takes the values <span class="math notranslate nohighlight">\(\{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\}\)</span></p>
 <div class="admonition-discrete-random-variable admonition">
 <p class="admonition-title">Discrete Random Variable</p>
-<p>A discrete random variable can take discrete values. For example, W representing the money we win if we toss a coin randomly. Or, Y the top face of a dice when the dice is rolled.</p>
+<p>A discrete random variable can take discrete values. For example, W representing the money we win if we toss a coin randomly. Or, Y the top face of a dice when the dice is rolled. Or, <span class="math notranslate nohighlight">\(Z\)</span> denoting the sum of numbers on the top side of two dies.</p>
+</div>
+<p>Let us now take a different example. Our experiment is to pick a person at random from a university and measure their weight. The sample space would be the list of all the people in the university and the random variable <span class="math notranslate nohighlight">\(T\)</span> would be weight corresponding to that randomly chosen person. The weight of that person would be a continuous scale.</p>
+<div class="admonition-continuous-random-variable admonition">
+<p class="admonition-title">Continuous Random Variable</p>
+<p>A continuous random variable takes continuous values.</p>
 </div>
 </div>
 
@@ -448,17 +472,17 @@ Y(\omega)= \begin{cases}100, &amp; \text { if } \omega=\text { heads } \\ -20, &
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="sample-space.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Prog-ML</p>
+            <p class="prev-next-title">Sample Space</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../bayesian_ml/2021-03-23-bayesian-ml.html" title="next page">
+    <a class='right-next' id="next-link" href="pmf.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bayesian ML: Fundamentals</p>
+        <p class="prev-next-title">Probability Mass Function (PMF)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
