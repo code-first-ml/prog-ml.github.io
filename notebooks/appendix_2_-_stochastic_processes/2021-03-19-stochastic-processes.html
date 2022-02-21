@@ -198,6 +198,18 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Bayesian ML with Pyro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pyro/2022_02_17_pyro_linreg.html">
+   Linear Regression using Pyro
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Gaussian processes
  </span>
 </p>
@@ -27059,16 +27071,16 @@ gCnVfoYD/3a7EUpFCi1gSrWfYcBXbjdCqUihBUyp9hMDHCMi2SKS7nZjlPI6LWBKtZ+ZwOXANuwt\
 </div></div>
 </div>
 <p>Let’s check for expected value and variance of <span class="math notranslate nohighlight">\(f(t)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-0799c34a-6c79-4fa0-ae22-bb78de66cb31">
-<span class="eqno">(37)<a class="headerlink" href="#equation-0799c34a-6c79-4fa0-ae22-bb78de66cb31" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-950be2c2-6309-40e0-bddc-6f07a58663a3">
+<span class="eqno">(37)<a class="headerlink" href="#equation-950be2c2-6309-40e0-bddc-6f07a58663a3" title="Permalink to this equation">¶</a></span>\[\begin{align}
 f(t) &amp;= f(t-1) + I, \text{   where, } I \text{ takes value 1 or -1 with equal probability}\\
 \mathbb{E}(f(t)) &amp;= \mathbb{E}(f(t-1)) + \mathbb{E}(I)\\
                  &amp;= \sum\limits_{time=0}^{t}\mathbb{E}(I)\\
 \mathbb{E}(f(t)) &amp;= 0
 \end{align}\]</div>
 <p>And, variance</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a5edbd9c-6836-452d-9310-d715169cb265">
-<span class="eqno">(38)<a class="headerlink" href="#equation-a5edbd9c-6836-452d-9310-d715169cb265" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9aeee94c-04e6-4b56-b1b0-3f891095e5ec">
+<span class="eqno">(38)<a class="headerlink" href="#equation-9aeee94c-04e6-4b56-b1b0-3f891095e5ec" title="Permalink to this equation">¶</a></span>\[\begin{align}
 V(f(t)) &amp;= \sum\limits_{T=0}^{t}V(I)\\
         &amp;= \sum\limits_{T=0}^{t}(\mathbb{E}(I^2) - (\mathbb{E}(I))^2\\
         &amp;= \sum\limits_{T=0}^{t}\mathbb{E}(I^2)\\

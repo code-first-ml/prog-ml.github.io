@@ -198,6 +198,18 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Bayesian ML with Pyro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pyro/2022_02_17_pyro_linreg.html">
+   Linear Regression using Pyro
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Gaussian processes
  </span>
 </p>
@@ -679,16 +691,16 @@ X_t = \sum\limits_{i=1}^{p}\phi_iX_{t-i} + \epsilon_t
 <div class="section" id="characteristic-equation-and-unit-root">
 <h3>Characteristic equation and unit root<a class="headerlink" href="#characteristic-equation-and-unit-root" title="Permalink to this headline">¶</a></h3>
 <p>AutoRegressive(1) model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e30bb8b8-6e0f-4c51-b028-b37d297ace46">
-<span class="eqno">(39)<a class="headerlink" href="#equation-e30bb8b8-6e0f-4c51-b028-b37d297ace46" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-521ea85d-7437-46b2-ba3a-6b2e60f186b3">
+<span class="eqno">(39)<a class="headerlink" href="#equation-521ea85d-7437-46b2-ba3a-6b2e60f186b3" title="Permalink to this equation">¶</a></span>\[\begin{align}
 X_t - \phi_1X_{t-1} &amp;= a_t \\
 (1-\phi_1B)X_t &amp;= a_t \\
 \text{Char. eq.}\\
 1 - \phi_1Z &amp;= 0
 \end{align}\]</div>
 <p>AutoRegressive(2) model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-445f0ef1-684a-465c-a227-a35b5ebd0ff3">
-<span class="eqno">(40)<a class="headerlink" href="#equation-445f0ef1-684a-465c-a227-a35b5ebd0ff3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-29c75bfb-e60c-4ad4-bd57-aac741430f30">
+<span class="eqno">(40)<a class="headerlink" href="#equation-29c75bfb-e60c-4ad4-bd57-aac741430f30" title="Permalink to this equation">¶</a></span>\[\begin{align}
 X_t - \phi_1X_{t-1} - \phi_2X_{t-2}&amp;= a_t \\
 X_t- \phi_1 BX_t -\phi_2 B^2 X_t &amp;=   a_t \\
 X_t\left[ 1 - \phi_1 B - \phi_2 B^2  \right] &amp;= a_t \\
