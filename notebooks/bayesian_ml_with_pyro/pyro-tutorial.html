@@ -1175,6 +1175,111 @@ Iteration: 450, Loss: 0.63, 0.320000022649765
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pyro</span><span class="o">.</span><span class="n">clear_param_store</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">guide_map</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="n">theta_map</span> <span class="o">=</span> <span class="n">pyro</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="s2">&quot;theta_map&quot;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
+                       <span class="n">constraint</span><span class="o">=</span><span class="n">constraints</span><span class="o">.</span><span class="n">unit_interval</span><span class="p">)</span>
+    <span class="n">pyro</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="s2">&quot;theta&quot;</span><span class="p">,</span> <span class="n">dist</span><span class="o">.</span><span class="n">Delta</span><span class="p">(</span><span class="n">theta_map</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyro.optim</span> <span class="kn">import</span> <span class="n">Adam</span>
+<span class="n">adam_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;lr&quot;</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">,</span> <span class="s2">&quot;betas&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">)}</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="n">adam_params</span><span class="p">)</span>
+<span class="n">svi</span> <span class="o">=</span> <span class="n">SVI</span><span class="p">(</span><span class="n">model3</span><span class="p">,</span> <span class="n">guide_map</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="n">Trace_ELBO</span><span class="p">())</span>
+
+<span class="n">n_steps</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">svi</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">samples</span><span class="p">),</span> <span class="n">samples</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">step</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 69.31471252441406
+10 68.44795227050781
+20 67.65349578857422
+30 66.93675994873047
+40 66.29862976074219
+50 65.73655700683594
+60 65.24586486816406
+70 64.82080078125
+80 64.45525360107422
+90 64.14307403564453
+100 63.87833786010742
+110 63.6553955078125
+120 63.468971252441406
+130 63.314212799072266
+140 63.186676025390625
+150 63.082332611083984
+160 62.99760437011719
+170 62.929317474365234
+180 62.874698638916016
+190 62.83134460449219
+200 62.79719543457031
+210 62.7705192565918
+220 62.74983215332031
+230 62.73391342163086
+240 62.72175979614258
+250 62.71255874633789
+260 62.70564651489258
+270 62.70049285888672
+280 62.696685791015625
+290 62.69389343261719
+300 62.691864013671875
+310 62.69039535522461
+320 62.68935012817383
+330 62.688602447509766
+340 62.68808364868164
+350 62.687721252441406
+360 62.68747329711914
+370 62.687294006347656
+380 62.68717956542969
+390 62.687095642089844
+400 62.687042236328125
+410 62.68701171875
+420 62.68699264526367
+430 62.68696975708008
+440 62.68695831298828
+450 62.68695068359375
+460 62.686954498291016
+470 62.68694305419922
+480 62.68695068359375
+490 62.68695068359375
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pyro</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="s2">&quot;theta_map&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.3201, grad_fn=&lt;ClampBackward1&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.3200)
+</pre></div>
+</div>
+</div>
+</div>
 <p>References</p>
 <ol class="simple">
 <li><p><a class="reference external" href="https://willcrichton.net/notes/probabilistic-programming-under-the-hood/">https://willcrichton.net/notes/probabilistic-programming-under-the-hood/</a></p></li>
