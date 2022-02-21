@@ -24,6 +24,9 @@ parts:
   chapters:
   - file: notebooks/bayesian_ml_with_pymc/2021-03-11-blr-pymc
   - file: notebooks/bayesian_ml_with_pymc/2021-03-12-logistic-bayesian
+- caption: Bayesian ML with Pyro
+  chapters:
+  - file: notebooks/bayesian_ml_with_pyro/2022_02_17_pyro_linreg.ipynb
 - caption: Gaussian processes
   chapters:
   - file: notebooks/gaussian_processes/2019-08-20-gaussian-processes.ipynb
