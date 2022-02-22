@@ -45,15 +45,14 @@
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="References" href="../references/references.html" />
@@ -520,8 +519,8 @@ y_t = \sum\limits_{i=1}^{d}y_{t-d}\phi_{t-d} + \mathcal{N}(0, 1)
 </div>
 <p>We can see that mean is almost constant over time but variance is varying significantly.</p>
 <p>What are the insights? For AR(1) process,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f53ef2eb-78e4-4b9e-add3-00c5d5545807">
-<span class="eqno">(41)<a class="headerlink" href="#equation-f53ef2eb-78e4-4b9e-add3-00c5d5545807" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-410f020d-7b95-4781-8667-f8ff49342061">
+<span class="eqno">(41)<a class="headerlink" href="#equation-410f020d-7b95-4781-8667-f8ff49342061" title="Permalink to this equation">¶</a></span>\[\begin{align}
 y_t &amp;= y_{t-1}\phi_{t-1}+Z_t , \;\;\;Z_t \sim \mathcal{N}(0,1)\\
 y_t - y_{t-1}\phi_{t-1} &amp;= Z_t\\ 
 (1 - B\phi_{t-1})y_t &amp;= Z_t
