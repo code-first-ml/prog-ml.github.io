@@ -243,6 +243,11 @@ const thebe_selector_output = ".output, .cell_output"
    GP v/s Deep GP on 2d data
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/2022-02-23-gp_rff.html">
+   Gaussian Processes with Random Fourier Features
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -27070,16 +27075,16 @@ gCnVfoYD/3a7EUpFCi1gSrWfYcBXbjdCqUihBUyp9hMDHCMi2SKS7nZjlPI6LWBKtZ+ZwOXANuwt\
 </div></div>
 </div>
 <p>Let’s check for expected value and variance of <span class="math notranslate nohighlight">\(f(t)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-3668aa66-1074-4f39-8f4d-52cc3d5b78c0">
-<span class="eqno">(37)<a class="headerlink" href="#equation-3668aa66-1074-4f39-8f4d-52cc3d5b78c0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-958e25d8-ae67-4742-a76c-1f570561158d">
+<span class="eqno">(37)<a class="headerlink" href="#equation-958e25d8-ae67-4742-a76c-1f570561158d" title="Permalink to this equation">¶</a></span>\[\begin{align}
 f(t) &amp;= f(t-1) + I, \text{   where, } I \text{ takes value 1 or -1 with equal probability}\\
 \mathbb{E}(f(t)) &amp;= \mathbb{E}(f(t-1)) + \mathbb{E}(I)\\
                  &amp;= \sum\limits_{time=0}^{t}\mathbb{E}(I)\\
 \mathbb{E}(f(t)) &amp;= 0
 \end{align}\]</div>
 <p>And, variance</p>
-<div class="amsmath math notranslate nohighlight" id="equation-51ef4edb-385a-4b87-937b-d58fe159f1e5">
-<span class="eqno">(38)<a class="headerlink" href="#equation-51ef4edb-385a-4b87-937b-d58fe159f1e5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f212d993-22b0-497f-bae9-d2a6ec5756e2">
+<span class="eqno">(38)<a class="headerlink" href="#equation-f212d993-22b0-497f-bae9-d2a6ec5756e2" title="Permalink to this equation">¶</a></span>\[\begin{align}
 V(f(t)) &amp;= \sum\limits_{T=0}^{t}V(I)\\
         &amp;= \sum\limits_{T=0}^{t}(\mathbb{E}(I^2) - (\mathbb{E}(I))^2\\
         &amp;= \sum\limits_{T=0}^{t}\mathbb{E}(I^2)\\

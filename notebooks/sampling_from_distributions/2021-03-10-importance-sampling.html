@@ -243,6 +243,11 @@ const thebe_selector_output = ".output, .cell_output"
    GP v/s Deep GP on 2d data
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/2022-02-23-gp_rff.html">
+   Gaussian Processes with Random Fourier Features
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -530,8 +535,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>We can find the marginal likelihood <span class="math notranslate nohighlight">\(z\)</span> using the following technique.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e0d98bc7-4aef-4bcd-a6f0-8ad36f738ca0">
-<span class="eqno">(30)<a class="headerlink" href="#equation-e0d98bc7-4aef-4bcd-a6f0-8ad36f738ca0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bf063c43-dc6c-40f6-a018-400164f08c6e">
+<span class="eqno">(30)<a class="headerlink" href="#equation-bf063c43-dc6c-40f6-a018-400164f08c6e" title="Permalink to this equation">¶</a></span>\[\begin{align}
 z &amp;= \int likelihood(x)\cdot prior(x)\cdot dx\\
 z &amp;= \int \frac{likelihood(x)\cdot prior(x)}{q(x)}\cdot q(x) \cdot dx\\
 z &amp;= \int w(x) \cdot q(x) \cdot dx\\
