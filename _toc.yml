@@ -36,6 +36,7 @@ parts:
   - file: notebooks/gaussian_processes/2021-04-15-deep-gp-from-scratch
   - file: notebooks/gaussian_processes/2021-04-16-ard-gp
   - file: notebooks/gaussian_processes/2021-04-16-GP-vs-DeepGP
+  - file: notebooks/gaussian_processes/2022-02-23-gp_rff
 - caption: Active Learning
   chapters:
   - file: notebooks/active_learning/2018-06-20-active-committee
