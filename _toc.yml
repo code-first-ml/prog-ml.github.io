@@ -18,8 +18,11 @@ parts:
   - file: notebooks/bayesian_ml/2021-03-31-derivation-of-marginal-likelihood
 - caption: Sampling from distributions
   chapters:
-  - file: notebooks/sampling_from_distributions/2021-03-10-importance-sampling
-  - file: notebooks/sampling_from_distributions/2021-03-10-rejection-sampling
+  - file: notebooks/sampling/monte-carlo
+  - file: notebooks/sampling/rejection-sampling-lr
+  - file: notebooks/sampling/Metropolis-Hastings
+  - file: notebooks/sampling/2021-03-10-importance-sampling
+  - file: notebooks/sampling/2021-03-10-rejection-sampling
 - caption: Bayesian ML with PyMC
   chapters:
   - file: notebooks/bayesian_ml_with_pymc/2021-03-11-blr-pymc
