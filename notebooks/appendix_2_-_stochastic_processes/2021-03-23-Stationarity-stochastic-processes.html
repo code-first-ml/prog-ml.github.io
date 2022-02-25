@@ -168,12 +168,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../sampling_from_distributions/2021-03-10-importance-sampling.html">
+  <a class="reference internal" href="../sampling/rejection-sampling-lr.html">
+   Simple rejection sampling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sampling/2021-03-10-importance-sampling.html">
    Importance sampling
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../sampling_from_distributions/2021-03-10-rejection-sampling.html">
+  <a class="reference internal" href="../sampling/2021-03-10-rejection-sampling.html">
    Rejection sampling
   </a>
  </li>
@@ -524,8 +529,8 @@ y_t = \sum\limits_{i=1}^{d}y_{t-d}\phi_{t-d} + \mathcal{N}(0, 1)
 </div>
 <p>We can see that mean is almost constant over time but variance is varying significantly.</p>
 <p>What are the insights? For AR(1) process,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0c3f32f1-95d6-412e-b4da-6f528570bd03">
-<span class="eqno">(41)<a class="headerlink" href="#equation-0c3f32f1-95d6-412e-b4da-6f528570bd03" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-00c98449-e536-454f-bf92-045a2cb4f264">
+<span class="eqno">(41)<a class="headerlink" href="#equation-00c98449-e536-454f-bf92-045a2cb4f264" title="Permalink to this equation">¶</a></span>\[\begin{align}
 y_t &amp;= y_{t-1}\phi_{t-1}+Z_t , \;\;\;Z_t \sim \mathcal{N}(0,1)\\
 y_t - y_{t-1}\phi_{t-1} &amp;= Z_t\\ 
 (1 - B\phi_{t-1})y_t &amp;= Z_t
