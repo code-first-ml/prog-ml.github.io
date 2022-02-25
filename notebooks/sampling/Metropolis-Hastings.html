@@ -876,7 +876,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_2d</span> <span class="o">=</span> <span class="n">mh</span><span class="p">(</span><span class="n">log_p_2d</span><span class="p">,</span> <span class="n">next_sample_2d</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_2d</span> <span class="o">=</span> <span class="n">mh</span><span class="p">(</span><span class="n">log_p_2d</span><span class="p">,</span> <span class="n">next_sample_2d</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -892,6 +892,23 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <img alt="../../_images/Metropolis-Hastings_32_1.png" src="../../_images/Metropolis-Hastings_32_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">corner</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corner</span><span class="o">.</span><span class="n">corner</span><span class="p">(</span><span class="n">x_2d</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">smooth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">show_titles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$x_1$&quot;</span><span class="p">,</span> <span class="s2">&quot;$x_2$&quot;</span><span class="p">],</span> <span class="n">smooth1d</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Metropolis-Hastings_34_0.png" src="../../_images/Metropolis-Hastings_34_0.png" />
 </div>
 </div>
 </div>
@@ -924,7 +941,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Density&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Metropolis-Hastings_36_1.png" src="../../_images/Metropolis-Hastings_36_1.png" />
+<img alt="../../_images/Metropolis-Hastings_38_1.png" src="../../_images/Metropolis-Hastings_38_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -942,7 +959,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x176e6b880&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Metropolis-Hastings_37_1.png" src="../../_images/Metropolis-Hastings_37_1.png" />
+<img alt="../../_images/Metropolis-Hastings_39_1.png" src="../../_images/Metropolis-Hastings_39_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -955,7 +972,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x176ec3880&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/Metropolis-Hastings_38_1.png" src="../../_images/Metropolis-Hastings_38_1.png" />
+<img alt="../../_images/Metropolis-Hastings_40_1.png" src="../../_images/Metropolis-Hastings_40_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -970,7 +987,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1770017f0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Metropolis-Hastings_39_1.png" src="../../_images/Metropolis-Hastings_39_1.png" />
+<img alt="../../_images/Metropolis-Hastings_41_1.png" src="../../_images/Metropolis-Hastings_41_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -988,7 +1005,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PolyCollection at 0x177104eb0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Metropolis-Hastings_40_1.png" src="../../_images/Metropolis-Hastings_40_1.png" />
+<img alt="../../_images/Metropolis-Hastings_42_1.png" src="../../_images/Metropolis-Hastings_42_1.png" />
 </div>
 </div>
 </div>
