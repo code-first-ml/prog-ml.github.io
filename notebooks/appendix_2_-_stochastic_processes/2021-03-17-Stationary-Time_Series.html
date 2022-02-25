@@ -173,6 +173,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../sampling/Metropolis-Hastings.html">
+   Metropolis Hastings
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../sampling/2021-03-10-importance-sampling.html">
    Importance sampling
   </a>
@@ -700,16 +705,16 @@ X_t = \sum\limits_{i=1}^{p}\phi_iX_{t-i} + \epsilon_t
 <div class="section" id="characteristic-equation-and-unit-root">
 <h3>Characteristic equation and unit root<a class="headerlink" href="#characteristic-equation-and-unit-root" title="Permalink to this headline">¶</a></h3>
 <p>AutoRegressive(1) model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8211a79d-3eea-4e2b-89c1-9507d028d86f">
-<span class="eqno">(39)<a class="headerlink" href="#equation-8211a79d-3eea-4e2b-89c1-9507d028d86f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e90755e0-4687-43c2-8437-16b542e462af">
+<span class="eqno">(39)<a class="headerlink" href="#equation-e90755e0-4687-43c2-8437-16b542e462af" title="Permalink to this equation">¶</a></span>\[\begin{align}
 X_t - \phi_1X_{t-1} &amp;= a_t \\
 (1-\phi_1B)X_t &amp;= a_t \\
 \text{Char. eq.}\\
 1 - \phi_1Z &amp;= 0
 \end{align}\]</div>
 <p>AutoRegressive(2) model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f425dc2b-7d83-4dd0-bb5a-e6da0fbc4218">
-<span class="eqno">(40)<a class="headerlink" href="#equation-f425dc2b-7d83-4dd0-bb5a-e6da0fbc4218" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b0195536-d1ca-418a-b0a5-6e938bf5c44c">
+<span class="eqno">(40)<a class="headerlink" href="#equation-b0195536-d1ca-418a-b0a5-6e938bf5c44c" title="Permalink to this equation">¶</a></span>\[\begin{align}
 X_t - \phi_1X_{t-1} - \phi_2X_{t-2}&amp;= a_t \\
 X_t- \phi_1 BX_t -\phi_2 B^2 X_t &amp;=   a_t \\
 X_t\left[ 1 - \phi_1 B - \phi_2 B^2  \right] &amp;= a_t \\

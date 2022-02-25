@@ -173,6 +173,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../sampling/Metropolis-Hastings.html">
+   Metropolis Hastings
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../sampling/2021-03-10-importance-sampling.html">
    Importance sampling
   </a>
@@ -27080,16 +27085,16 @@ gCnVfoYD/3a7EUpFCi1gSrWfYcBXbjdCqUihBUyp9hMDHCMi2SKS7nZjlPI6LWBKtZ+ZwOXANuwt\
 </div></div>
 </div>
 <p>Let’s check for expected value and variance of <span class="math notranslate nohighlight">\(f(t)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-4a8499ad-0e87-4551-a8b5-e0c9cd920c0a">
-<span class="eqno">(37)<a class="headerlink" href="#equation-4a8499ad-0e87-4551-a8b5-e0c9cd920c0a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-347c8497-7640-4a52-8ee4-ab0cf1ec88e9">
+<span class="eqno">(37)<a class="headerlink" href="#equation-347c8497-7640-4a52-8ee4-ab0cf1ec88e9" title="Permalink to this equation">¶</a></span>\[\begin{align}
 f(t) &amp;= f(t-1) + I, \text{   where, } I \text{ takes value 1 or -1 with equal probability}\\
 \mathbb{E}(f(t)) &amp;= \mathbb{E}(f(t-1)) + \mathbb{E}(I)\\
                  &amp;= \sum\limits_{time=0}^{t}\mathbb{E}(I)\\
 \mathbb{E}(f(t)) &amp;= 0
 \end{align}\]</div>
 <p>And, variance</p>
-<div class="amsmath math notranslate nohighlight" id="equation-07908bcd-30cb-4e5a-b20a-367e3bd55f80">
-<span class="eqno">(38)<a class="headerlink" href="#equation-07908bcd-30cb-4e5a-b20a-367e3bd55f80" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bedb6590-0a36-43cb-8548-d14870bd08b1">
+<span class="eqno">(38)<a class="headerlink" href="#equation-bedb6590-0a36-43cb-8548-d14870bd08b1" title="Permalink to this equation">¶</a></span>\[\begin{align}
 V(f(t)) &amp;= \sum\limits_{T=0}^{t}V(I)\\
         &amp;= \sum\limits_{T=0}^{t}(\mathbb{E}(I^2) - (\mathbb{E}(I))^2\\
         &amp;= \sum\limits_{T=0}^{t}\mathbb{E}(I^2)\\

@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Rejection sampling" href="2021-03-10-rejection-sampling.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="Metropolis-Hastings.html" />
+    <link rel="prev" title="Metropolis Hastings" href="Metropolis-Hastings.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -170,6 +170,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="rejection-sampling-lr.html">
    Simple rejection sampling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Metropolis-Hastings.html">
+   Metropolis Hastings
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -540,8 +545,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>We can find the marginal likelihood <span class="math notranslate nohighlight">\(z\)</span> using the following technique.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4b1aaf26-d5e7-46c9-beb1-98dd9f8e46c3">
-<span class="eqno">(30)<a class="headerlink" href="#equation-4b1aaf26-d5e7-46c9-beb1-98dd9f8e46c3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f4e9b649-c114-46e6-bd9c-e1ff091c2761">
+<span class="eqno">(30)<a class="headerlink" href="#equation-f4e9b649-c114-46e6-bd9c-e1ff091c2761" title="Permalink to this equation">¶</a></span>\[\begin{align}
 z &amp;= \int likelihood(x)\cdot prior(x)\cdot dx\\
 z &amp;= \int \frac{likelihood(x)\cdot prior(x)}{q(x)}\cdot q(x) \cdot dx\\
 z &amp;= \int w(x) \cdot q(x) \cdot dx\\
@@ -747,7 +752,7 @@ z &amp;\approx \frac{1}{N}\sum\limits_{i=1}^{N}w(x)
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">&lt;no title&gt;</p>
+            <p class="prev-next-title">Metropolis Hastings</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="2021-03-10-rejection-sampling.html" title="next page">
