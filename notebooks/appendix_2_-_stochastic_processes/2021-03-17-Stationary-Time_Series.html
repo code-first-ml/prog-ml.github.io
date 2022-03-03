@@ -128,6 +128,16 @@ const thebe_selector_output = ".output, .cell_output"
    Properties of RV
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../probability/mvn-introduction.html">
+   Multivariate Normal Distribution: Introdcuction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../probability/mvn-marginal.html">
+   Multivariate Normal Distribution: Marginals
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -705,16 +715,16 @@ X_t = \sum\limits_{i=1}^{p}\phi_iX_{t-i} + \epsilon_t
 <div class="section" id="characteristic-equation-and-unit-root">
 <h3>Characteristic equation and unit root<a class="headerlink" href="#characteristic-equation-and-unit-root" title="Permalink to this headline">¶</a></h3>
 <p>AutoRegressive(1) model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e5c765db-7dd0-4251-81e9-166e52b41f22">
-<span class="eqno">(39)<a class="headerlink" href="#equation-e5c765db-7dd0-4251-81e9-166e52b41f22" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b01e3ce2-3b2d-4c46-924f-6e26e6368e6e">
+<span class="eqno">(39)<a class="headerlink" href="#equation-b01e3ce2-3b2d-4c46-924f-6e26e6368e6e" title="Permalink to this equation">¶</a></span>\[\begin{align}
 X_t - \phi_1X_{t-1} &amp;= a_t \\
 (1-\phi_1B)X_t &amp;= a_t \\
 \text{Char. eq.}\\
 1 - \phi_1Z &amp;= 0
 \end{align}\]</div>
 <p>AutoRegressive(2) model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ee7bdfef-8015-4f7a-afe8-bb84b5823be2">
-<span class="eqno">(40)<a class="headerlink" href="#equation-ee7bdfef-8015-4f7a-afe8-bb84b5823be2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-55e42915-e8f9-473f-8901-0529da21b452">
+<span class="eqno">(40)<a class="headerlink" href="#equation-55e42915-e8f9-473f-8901-0529da21b452" title="Permalink to this equation">¶</a></span>\[\begin{align}
 X_t - \phi_1X_{t-1} - \phi_2X_{t-2}&amp;= a_t \\
 X_t- \phi_1 BX_t -\phi_2 B^2 X_t &amp;=   a_t \\
 X_t\left[ 1 - \phi_1 B - \phi_2 B^2  \right] &amp;= a_t \\

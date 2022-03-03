@@ -128,6 +128,16 @@ const thebe_selector_output = ".output, .cell_output"
    Properties of RV
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../probability/mvn-introduction.html">
+   Multivariate Normal Distribution: Introdcuction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../probability/mvn-marginal.html">
+   Multivariate Normal Distribution: Marginals
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -545,8 +555,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>We can find the marginal likelihood <span class="math notranslate nohighlight">\(z\)</span> using the following technique.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a63731f-62de-4d2d-8b96-fed4c7588985">
-<span class="eqno">(30)<a class="headerlink" href="#equation-8a63731f-62de-4d2d-8b96-fed4c7588985" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-630156a3-8d14-40a9-a08e-fd657cf5a9eb">
+<span class="eqno">(30)<a class="headerlink" href="#equation-630156a3-8d14-40a9-a08e-fd657cf5a9eb" title="Permalink to this equation">¶</a></span>\[\begin{align}
 z &amp;= \int likelihood(x)\cdot prior(x)\cdot dx\\
 z &amp;= \int \frac{likelihood(x)\cdot prior(x)}{q(x)}\cdot q(x) \cdot dx\\
 z &amp;= \int w(x) \cdot q(x) \cdot dx\\

@@ -128,6 +128,16 @@ const thebe_selector_output = ".output, .cell_output"
    Properties of RV
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../probability/mvn-introduction.html">
+   Multivariate Normal Distribution: Introdcuction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../probability/mvn-marginal.html">
+   Multivariate Normal Distribution: Marginals
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -27085,16 +27095,16 @@ gCnVfoYD/3a7EUpFCi1gSrWfYcBXbjdCqUihBUyp9hMDHCMi2SKS7nZjlPI6LWBKtZ+ZwOXANuwt\
 </div></div>
 </div>
 <p>Let’s check for expected value and variance of <span class="math notranslate nohighlight">\(f(t)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-fcc5468e-a185-4bab-ae3c-f3b92e7707f2">
-<span class="eqno">(37)<a class="headerlink" href="#equation-fcc5468e-a185-4bab-ae3c-f3b92e7707f2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1a951397-1a99-499b-8aa7-0e6e5bb7af1a">
+<span class="eqno">(37)<a class="headerlink" href="#equation-1a951397-1a99-499b-8aa7-0e6e5bb7af1a" title="Permalink to this equation">¶</a></span>\[\begin{align}
 f(t) &amp;= f(t-1) + I, \text{   where, } I \text{ takes value 1 or -1 with equal probability}\\
 \mathbb{E}(f(t)) &amp;= \mathbb{E}(f(t-1)) + \mathbb{E}(I)\\
                  &amp;= \sum\limits_{time=0}^{t}\mathbb{E}(I)\\
 \mathbb{E}(f(t)) &amp;= 0
 \end{align}\]</div>
 <p>And, variance</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c0723e81-e7a1-4981-bf3a-c30492f177b2">
-<span class="eqno">(38)<a class="headerlink" href="#equation-c0723e81-e7a1-4981-bf3a-c30492f177b2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-80521899-834b-4e78-84ce-8e86f157b12a">
+<span class="eqno">(38)<a class="headerlink" href="#equation-80521899-834b-4e78-84ce-8e86f157b12a" title="Permalink to this equation">¶</a></span>\[\begin{align}
 V(f(t)) &amp;= \sum\limits_{T=0}^{t}V(I)\\
         &amp;= \sum\limits_{T=0}^{t}(\mathbb{E}(I^2) - (\mathbb{E}(I))^2\\
         &amp;= \sum\limits_{T=0}^{t}\mathbb{E}(I^2)\\
