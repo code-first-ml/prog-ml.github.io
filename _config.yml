@@ -31,6 +31,7 @@ parse:
     - substitution
 
 html:
+  use_edit_page_button      : true
   use_issues_button         : true  # Whether to add an "open an issue" button
   use_repository_button     : true  # Whether to add a link to your repository button
   comments:
