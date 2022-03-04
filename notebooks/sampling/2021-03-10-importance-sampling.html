@@ -449,7 +449,9 @@ const thebe_selector_output = ".output, .cell_output"
             href="https://github.com/prog-ml/prog-ml.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/sampling/2021-03-10-importance-sampling.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/prog-ml/prog-ml.github.io/edit/main/notebooks/sampling/2021-03-10-importance-sampling.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -613,8 +615,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>We can find the marginal likelihood <span class="math notranslate nohighlight">\(z\)</span> using the following technique.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-71253436-77a8-470c-b694-1d275e0bf294">
-<span class="eqno">(30)<a class="headerlink" href="#equation-71253436-77a8-470c-b694-1d275e0bf294" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9523f77f-6203-48bf-9295-43d3095cc3d1">
+<span class="eqno">(30)<a class="headerlink" href="#equation-9523f77f-6203-48bf-9295-43d3095cc3d1" title="Permalink to this equation">¶</a></span>\[\begin{align}
 z &amp;= \int likelihood(x)\cdot prior(x)\cdot dx\\
 z &amp;= \int \frac{likelihood(x)\cdot prior(x)}{q(x)}\cdot q(x) \cdot dx\\
 z &amp;= \int w(x) \cdot q(x) \cdot dx\\

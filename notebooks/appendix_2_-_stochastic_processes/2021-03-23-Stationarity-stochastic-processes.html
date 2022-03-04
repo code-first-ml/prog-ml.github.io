@@ -449,7 +449,9 @@ const thebe_selector_output = ".output, .cell_output"
             href="https://github.com/prog-ml/prog-ml.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/appendix_2_-_stochastic_processes/2021-03-23-Stationarity-stochastic-processes.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/prog-ml/prog-ml.github.io/edit/main/notebooks/appendix_2_-_stochastic_processes/2021-03-23-Stationarity-stochastic-processes.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -602,8 +604,8 @@ y_t = \sum\limits_{i=1}^{d}y_{t-d}\phi_{t-d} + \mathcal{N}(0, 1)
 </div>
 <p>We can see that mean is almost constant over time but variance is varying significantly.</p>
 <p>What are the insights? For AR(1) process,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-46cccfc0-590b-4ac1-837e-2142ec429a4a">
-<span class="eqno">(41)<a class="headerlink" href="#equation-46cccfc0-590b-4ac1-837e-2142ec429a4a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8c3e375c-d081-4960-b149-2f665c33e942">
+<span class="eqno">(41)<a class="headerlink" href="#equation-8c3e375c-d081-4960-b149-2f665c33e942" title="Permalink to this equation">¶</a></span>\[\begin{align}
 y_t &amp;= y_{t-1}\phi_{t-1}+Z_t , \;\;\;Z_t \sim \mathcal{N}(0,1)\\
 y_t - y_{t-1}\phi_{t-1} &amp;= Z_t\\ 
 (1 - B\phi_{t-1})y_t &amp;= Z_t
