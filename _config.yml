@@ -15,7 +15,8 @@ bibtex_bibfiles:
   
 launch_buttons:
   colab_url: "https://colab.research.google.com"
-
+  thebe: true
+  
 repository:
   url: https://github.com/prog-ml/prog-ml.github.io
   branch: main
