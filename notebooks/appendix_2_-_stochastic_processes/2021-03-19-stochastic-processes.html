@@ -112,6 +112,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/prog-ml.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Prog-ML</h1>
@@ -27148,16 +27153,16 @@ gCnVfoYD/3a7EUpFCi1gSrWfYcBXbjdCqUihBUyp9hMDHCMi2SKS7nZjlPI6LWBKtZ+ZwOXANuwt\
 </div></div>
 </div>
 <p>Let’s check for expected value and variance of <span class="math notranslate nohighlight">\(f(t)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b39e18e-4f75-4838-b6b8-b6f78a93bedc">
-<span class="eqno">(37)<a class="headerlink" href="#equation-7b39e18e-4f75-4838-b6b8-b6f78a93bedc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c5adecb1-0ad3-43ad-904a-aaa2a96b40f8">
+<span class="eqno">(37)<a class="headerlink" href="#equation-c5adecb1-0ad3-43ad-904a-aaa2a96b40f8" title="Permalink to this equation">¶</a></span>\[\begin{align}
 f(t) &amp;= f(t-1) + I, \text{   where, } I \text{ takes value 1 or -1 with equal probability}\\
 \mathbb{E}(f(t)) &amp;= \mathbb{E}(f(t-1)) + \mathbb{E}(I)\\
                  &amp;= \sum\limits_{time=0}^{t}\mathbb{E}(I)\\
 \mathbb{E}(f(t)) &amp;= 0
 \end{align}\]</div>
 <p>And, variance</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aec3d7f4-b273-4909-93b4-f302dd462784">
-<span class="eqno">(38)<a class="headerlink" href="#equation-aec3d7f4-b273-4909-93b4-f302dd462784" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-86af1d8d-b82e-46e5-bee9-ea9a7affe360">
+<span class="eqno">(38)<a class="headerlink" href="#equation-86af1d8d-b82e-46e5-bee9-ea9a7affe360" title="Permalink to this equation">¶</a></span>\[\begin{align}
 V(f(t)) &amp;= \sum\limits_{T=0}^{t}V(I)\\
         &amp;= \sum\limits_{T=0}^{t}(\mathbb{E}(I^2) - (\mathbb{E}(I))^2\\
         &amp;= \sum\limits_{T=0}^{t}\mathbb{E}(I^2)\\
