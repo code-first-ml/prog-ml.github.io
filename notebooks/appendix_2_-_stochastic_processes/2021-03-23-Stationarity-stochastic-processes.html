@@ -43,6 +43,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "prog-ml/prog-ml.github.io");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -563,8 +597,8 @@ y_t = \sum\limits_{i=1}^{d}y_{t-d}\phi_{t-d} + \mathcal{N}(0, 1)
 </div>
 <p>We can see that mean is almost constant over time but variance is varying significantly.</p>
 <p>What are the insights? For AR(1) process,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-933c301f-9dd1-42a9-a548-2f0ce308f739">
-<span class="eqno">(41)<a class="headerlink" href="#equation-933c301f-9dd1-42a9-a548-2f0ce308f739" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1b52c423-23bd-45bd-9500-816ca9882861">
+<span class="eqno">(41)<a class="headerlink" href="#equation-1b52c423-23bd-45bd-9500-816ca9882861" title="Permalink to this equation">¶</a></span>\[\begin{align}
 y_t &amp;= y_{t-1}\phi_{t-1}+Z_t , \;\;\;Z_t \sim \mathcal{N}(0,1)\\
 y_t - y_{t-1}\phi_{t-1} &amp;= Z_t\\ 
 (1 - B\phi_{t-1})y_t &amp;= Z_t
