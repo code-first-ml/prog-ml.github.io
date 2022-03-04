@@ -406,7 +406,10 @@ const thebe_selector_output = ".output, .cell_output"
             href="https://github.com/prog-ml/prog-ml.github.io"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
-        
+        <a class="issues-button"
+            href="https://github.com/prog-ml/prog-ml.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/appendix_2_-_stochastic_processes/2021-03-17-Stationary-Time_Series.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
     </div>
 </div>
@@ -731,16 +734,16 @@ X_t = \sum\limits_{i=1}^{p}\phi_iX_{t-i} + \epsilon_t
 <div class="section" id="characteristic-equation-and-unit-root">
 <h3>Characteristic equation and unit root<a class="headerlink" href="#characteristic-equation-and-unit-root" title="Permalink to this headline">¶</a></h3>
 <p>AutoRegressive(1) model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1ba48d7a-d94e-4618-9565-04101f29ca09">
-<span class="eqno">(39)<a class="headerlink" href="#equation-1ba48d7a-d94e-4618-9565-04101f29ca09" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5624a7ec-a2bf-4c09-a8f1-e01ae4775996">
+<span class="eqno">(39)<a class="headerlink" href="#equation-5624a7ec-a2bf-4c09-a8f1-e01ae4775996" title="Permalink to this equation">¶</a></span>\[\begin{align}
 X_t - \phi_1X_{t-1} &amp;= a_t \\
 (1-\phi_1B)X_t &amp;= a_t \\
 \text{Char. eq.}\\
 1 - \phi_1Z &amp;= 0
 \end{align}\]</div>
 <p>AutoRegressive(2) model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7c541b12-daaf-4342-be22-5effb0ddf7ff">
-<span class="eqno">(40)<a class="headerlink" href="#equation-7c541b12-daaf-4342-be22-5effb0ddf7ff" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3ff85f58-711a-42b6-bb9f-b8f80930a627">
+<span class="eqno">(40)<a class="headerlink" href="#equation-3ff85f58-711a-42b6-bb9f-b8f80930a627" title="Permalink to this equation">¶</a></span>\[\begin{align}
 X_t - \phi_1X_{t-1} - \phi_2X_{t-2}&amp;= a_t \\
 X_t- \phi_1 BX_t -\phi_2 B^2 X_t &amp;=   a_t \\
 X_t\left[ 1 - \phi_1 B - \phi_2 B^2  \right] &amp;= a_t \\
