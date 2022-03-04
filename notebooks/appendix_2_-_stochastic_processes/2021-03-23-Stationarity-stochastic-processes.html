@@ -425,6 +425,9 @@ const thebe_selector_output = ".output, .cell_output"
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -544,8 +547,8 @@ y_t = \sum\limits_{i=1}^{d}y_{t-d}\phi_{t-d} + \mathcal{N}(0, 1)
 </div>
 <p>We can see that mean is almost constant over time but variance is varying significantly.</p>
 <p>What are the insights? For AR(1) process,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-36462a6e-3588-41e2-8767-073599964ecb">
-<span class="eqno">(41)<a class="headerlink" href="#equation-36462a6e-3588-41e2-8767-073599964ecb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-13d05f42-bcfe-4a21-9fc9-ff0fb16f9a19">
+<span class="eqno">(41)<a class="headerlink" href="#equation-13d05f42-bcfe-4a21-9fc9-ff0fb16f9a19" title="Permalink to this equation">¶</a></span>\[\begin{align}
 y_t &amp;= y_{t-1}\phi_{t-1}+Z_t , \;\;\;Z_t \sim \mathcal{N}(0,1)\\
 y_t - y_{t-1}\phi_{t-1} &amp;= Z_t\\ 
 (1 - B\phi_{t-1})y_t &amp;= Z_t
@@ -626,8 +629,8 @@ f_c(B) = 1 - 0.1B - 0.2B^2 - 0.3B^3 = 0
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "prog-ml/prog-ml.github.io",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",

@@ -423,6 +423,9 @@ const thebe_selector_output = ".output, .cell_output"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -966,8 +969,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Ok, let us know try to plot a few jointplots for different covariance matrices. We would be passing in the values of <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(\rho\)</span> which would make up the covariance matrix as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c03717c8-25f1-46ef-87f4-7d7c2a1e2351">
-<span class="eqno">()<a class="headerlink" href="#equation-c03717c8-25f1-46ef-87f4-7d7c2a1e2351" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-913a5c84-53aa-486d-9279-1d3846751f92">
+<span class="eqno">()<a class="headerlink" href="#equation-913a5c84-53aa-486d-9279-1d3846751f92" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
  a &amp; \rho \\
  \rho &amp; b
 \end{bmatrix}\]</div>
@@ -2653,8 +2656,8 @@ y_i = f(x_i) + \epsilon \\
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "prog-ml/prog-ml.github.io",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",

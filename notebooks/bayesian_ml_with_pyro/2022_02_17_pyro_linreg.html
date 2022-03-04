@@ -423,6 +423,9 @@ const thebe_selector_output = ".output, .cell_output"
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -1031,8 +1034,8 @@ const thebe_selector_output = ".output, .cell_output"
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "prog-ml/prog-ml.github.io",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
