@@ -27,6 +27,8 @@ parts:
   - file: notebooks/sampling/2021-03-10-rejection-sampling
   - file: notebooks/sampling/2022-02-04-sampling-normal.ipynb
   - file: notebooks/sampling/2020-04-16-inverse-transform.ipynb
+  - file: notebooks/sampling/2014-05-01-gibbs-sampling.ipynb
+  - file: notebooks/sampling/2014-07-01-mcmc_coins.ipynb
 - caption: Graphical Models
   chapters:
   - file: notebooks/graphical_models/2022-02-15-draw-graphical-models.ipynb
@@ -84,11 +86,29 @@ parts:
 - caption: Generative Adversarial Networks
   chapters:
   - file: notebooks/gans/2021-05-31-GAN.ipynb
+- caption: Hidden Markov Models
+  chapters:
+  - file: notebooks/hmms/2013-06-01-hmm_simulate.ipynb
+  - file: notebooks/hmms/2013-07-01-hmm_continuous.ipynb
+- caption: Tensor Factorization
+  chapters:
+  - file: notebooks/tensor_factorization/2017-04-19-nmf-out-matrix.ipynb
+  - file: notebooks/tensor_factorization/2017-04-20-parafac-out-tensor.ipynb
+  - file: notebooks/tensor_factorization/2017-08-13-mf-autograd-adagrad.ipynb
+  - file: notebooks/tensor_factorization/2017-04-21-constrained-nmf-cvx.ipynb
 - caption: Neural Networks
   chapters:
   - file: notebooks/neural_networks/2020-03-08-keras-neural-non-linear.ipynb
   - file: notebooks/neural_networks/2020-02-28-xor-relu-vector.ipynb
   - file: notebooks/neural_networks/2020-03-02-linear-scratch.ipynb
+  - file: notebooks/neural_networks/2018-01-13-denoising.ipynb
+- caption: Expectation Maximization
+  chapters:
+  - file: notebooks/em/2014-06-01-em.ipynb
+- caption: Recommender Systems
+  chapters:
+  - file: notebooks/recommender_systems/2017-12-18-recommend-keras.ipynb
+  - file: notebooks/recommender_systems/2017-12-29-neural-collaborative-filtering.ipynb
 - caption: Active Learning
   chapters:
   - file: notebooks/active_learning/2018-06-20-active-committee
@@ -97,6 +117,7 @@ parts:
 - caption: ML Softwares
   chapters:
   - file: notebooks/ml_softwares/2022-02-09-autograd-pytorch-jax.ipynb
+  - file: notebooks/ml_softwares/2017-08-12-linear-regression-adagrad-vs-gd.ipynb
 - caption: Others
   chapters:
   - file: notebooks/others/2021-03-24-sigmoid
