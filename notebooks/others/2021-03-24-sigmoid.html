@@ -91,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Eigen values" href="../appendix_1_-_linear_algebra_for_ml/2021-03-15-eigen.html" />
-    <link rel="prev" title="Active Learning with Bayesian Linear Regression" href="../active_learning/2020-04-21-active-learning-with-bayesian-linear-regression.html" />
+    <link rel="prev" title="Autograd in JAX and PyTorch" href="../ml_softwares/2022-02-09-autograd-pytorch-jax.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -213,7 +213,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Sampling from distributions
+  Sampling from Distributions
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -237,6 +237,64 @@ const thebe_selector_output = ".output, .cell_output"
    Rejection sampling
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sampling/2022-02-04-sampling-normal.html">
+   Sampling from univariate and multivariate normal distributions using Box-Muller transform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sampling/2020-04-16-inverse-transform.html">
+   Sampling from common distributions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Graphical Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../graphical_models/2022-02-15-draw-graphical-models.html">
+   Drawing graphical models
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Mixture Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mixture_models/2022-02-14-GMM.html">
+   GMM learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  KL-divergence
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../kl_divergence/2022-01-29-kl-divergence.html">
+   Understanding KL-Divergence
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Variational Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../variational_models/2022-02-12-variational-inference.html">
+   Variational Inference
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -254,30 +312,6 @@ const thebe_selector_output = ".output, .cell_output"
    Bayesian logistic regression
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Bayesian ML with Pyro
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../bayesian_ml_with_pyro/2022_02_17_pyro_linreg.html">
-   Linear Regression using Pyro
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Gaussian processes
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../gaussian_processes/2021-04-15-LLS-GP.html">
-   Local Lengthscale GP
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../gaussian_processes/2021-03-16-GP-PyMC3.html">
    Gaussian process regression in PyMC
@@ -286,6 +320,116 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../gaussian_processes/2021-03-17-lls-gp-pymc3.html">
    Local Lengthscale GP with PyMC
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bayesian ML with Pyro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pyro/2021-08-20-Bayesian.html">
+   Probabilistic Programming in Pyro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pyro/2022_02_17_pyro_linreg.html">
+   Linear Regression using Pyro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pyro/2022-02-20-condition-pyro.html">
+   Pyro Conditioning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bayesian ML with PyTorch
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pytorch/2022-02-09-pytorch-learn-normal.html">
+   Maximum Likelihood Estimation (MLE) for parameters of univariate and multivariate normal distribution in PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pytorch/2022-02-11-pytorch-learn-normal-map.html">
+   Maximum A-Posteriori (MAP) for parameters of univariate and multivariate normal distribution in PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pytorch/2022-02-17-ppca.html">
+   Probabilstic PCA using PyTorch distributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pytorch/2022-02-14-logistic-regression.html">
+   Logistic Regression using PyTorch distributions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bayesian ML with Tensorflow Probability
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_tfp/2022-01-26-tfp-distributions.html">
+   Testing out some distributions in Tensorflow Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_tfp/2022-02-07-coin-toss.html">
+   Coin Toss (MLE, MAP, Fully Bayesian) in TF Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_tfp/2022-01-28-tfp-linear-regression.html">
+   Linear Regression in Tensorflow Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_tfp/2022-02-05-lr.html">
+   Linear Regression in TF Probability using JointDistributionCoroutineAutoBatched
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_tfp/2022-02-05-simple-dgm.html">
+   Simple Directed Graphical Models in TF Probability
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bayesian ML with Julia
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_julia/2021-09-01-Hello-Julia-Language.html">
+   Linear Regression from scratch in Julia
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Gaussian Processes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/2020-03-26-gp.html">
+   Some experiments in Gaussian Processes Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/2021-04-15-LLS-GP.html">
+   Local Lengthscale GP
   </a>
  </li>
  <li class="toctree-l1">
@@ -306,6 +450,67 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../gaussian_processes/2022-02-23-gp_rff.html">
    Gaussian Processes with Random Fourier Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/2020-03-29-param-learning.html">
+   Learning Gaussian Process regression parameters using gradient descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/2021-09-03-param-learning-sgd.html">
+   Learning Gaussian Process regression parameters using mini-batch stochastic gradient descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/2020-06-26-gp-understand.html">
+   Understanding Kernels in Gaussian Processes Regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Linear Regression
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linear_regression/2022_02_21_coordinate_descent_failure.html">
+   Coordinate descent failure example
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Generative Adversarial Networks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gans/2021-05-31-GAN.html">
+   A programming introduction to GANs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../neural_networks/2020-03-08-keras-neural-non-linear.html">
+   Some Neural Network Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../neural_networks/2020-02-28-xor-relu-vector.html">
+   Learning neural network for XOR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../neural_networks/2020-03-02-linear-scratch.html">
+   Neural Networks from scratch
   </a>
  </li>
 </ul>
@@ -333,6 +538,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  ML Softwares
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml_softwares/2022-02-09-autograd-pytorch-jax.html">
+   Autograd in JAX and PyTorch
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Appendix 1 - Linear Algebra for ML
  </span>
 </p>
@@ -350,6 +567,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../appendix_1_-_linear_algebra_for_ml/2021-03-15-Positive-semi-definite.html">
    Positive definiteness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix_1_-_linear_algebra_for_ml/2022-02-11-matrix.html">
+   Matrix as transformation and interpreting low rank matrix
   </a>
  </li>
 </ul>
@@ -680,11 +902,11 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../active_learning/2020-04-21-active-learning-with-bayesian-linear-regression.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../ml_softwares/2022-02-09-autograd-pytorch-jax.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Active Learning with Bayesian Linear Regression</p>
+            <p class="prev-next-title">Autograd in JAX and PyTorch</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../appendix_1_-_linear_algebra_for_ml/2021-03-15-eigen.html" title="next page">

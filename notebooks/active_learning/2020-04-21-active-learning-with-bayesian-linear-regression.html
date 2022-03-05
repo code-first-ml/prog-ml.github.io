@@ -90,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="../others/2021-03-24-sigmoid.html" />
+    <link rel="next" title="Autograd in JAX and PyTorch" href="../ml_softwares/2022-02-09-autograd-pytorch-jax.html" />
     <link rel="prev" title="Query by Committee" href="2022_01_24_Query_by_Committee.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -213,7 +213,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Sampling from distributions
+  Sampling from Distributions
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -237,6 +237,64 @@ const thebe_selector_output = ".output, .cell_output"
    Rejection sampling
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sampling/2022-02-04-sampling-normal.html">
+   Sampling from univariate and multivariate normal distributions using Box-Muller transform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sampling/2020-04-16-inverse-transform.html">
+   Sampling from common distributions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Graphical Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../graphical_models/2022-02-15-draw-graphical-models.html">
+   Drawing graphical models
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Mixture Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mixture_models/2022-02-14-GMM.html">
+   GMM learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  KL-divergence
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../kl_divergence/2022-01-29-kl-divergence.html">
+   Understanding KL-Divergence
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Variational Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../variational_models/2022-02-12-variational-inference.html">
+   Variational Inference
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -254,30 +312,6 @@ const thebe_selector_output = ".output, .cell_output"
    Bayesian logistic regression
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Bayesian ML with Pyro
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../bayesian_ml_with_pyro/2022_02_17_pyro_linreg.html">
-   Linear Regression using Pyro
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Gaussian processes
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../gaussian_processes/2021-04-15-LLS-GP.html">
-   Local Lengthscale GP
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../gaussian_processes/2021-03-16-GP-PyMC3.html">
    Gaussian process regression in PyMC
@@ -286,6 +320,116 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../gaussian_processes/2021-03-17-lls-gp-pymc3.html">
    Local Lengthscale GP with PyMC
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bayesian ML with Pyro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pyro/2021-08-20-Bayesian.html">
+   Probabilistic Programming in Pyro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pyro/2022_02_17_pyro_linreg.html">
+   Linear Regression using Pyro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pyro/2022-02-20-condition-pyro.html">
+   Pyro Conditioning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bayesian ML with PyTorch
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pytorch/2022-02-09-pytorch-learn-normal.html">
+   Maximum Likelihood Estimation (MLE) for parameters of univariate and multivariate normal distribution in PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pytorch/2022-02-11-pytorch-learn-normal-map.html">
+   Maximum A-Posteriori (MAP) for parameters of univariate and multivariate normal distribution in PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pytorch/2022-02-17-ppca.html">
+   Probabilstic PCA using PyTorch distributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_pytorch/2022-02-14-logistic-regression.html">
+   Logistic Regression using PyTorch distributions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bayesian ML with Tensorflow Probability
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_tfp/2022-01-26-tfp-distributions.html">
+   Testing out some distributions in Tensorflow Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_tfp/2022-02-07-coin-toss.html">
+   Coin Toss (MLE, MAP, Fully Bayesian) in TF Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_tfp/2022-01-28-tfp-linear-regression.html">
+   Linear Regression in Tensorflow Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_tfp/2022-02-05-lr.html">
+   Linear Regression in TF Probability using JointDistributionCoroutineAutoBatched
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_tfp/2022-02-05-simple-dgm.html">
+   Simple Directed Graphical Models in TF Probability
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bayesian ML with Julia
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bayesian_ml_with_julia/2021-09-01-Hello-Julia-Language.html">
+   Linear Regression from scratch in Julia
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Gaussian Processes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/2020-03-26-gp.html">
+   Some experiments in Gaussian Processes Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/2021-04-15-LLS-GP.html">
+   Local Lengthscale GP
   </a>
  </li>
  <li class="toctree-l1">
@@ -306,6 +450,67 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../gaussian_processes/2022-02-23-gp_rff.html">
    Gaussian Processes with Random Fourier Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/2020-03-29-param-learning.html">
+   Learning Gaussian Process regression parameters using gradient descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/2021-09-03-param-learning-sgd.html">
+   Learning Gaussian Process regression parameters using mini-batch stochastic gradient descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/2020-06-26-gp-understand.html">
+   Understanding Kernels in Gaussian Processes Regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Linear Regression
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linear_regression/2022_02_21_coordinate_descent_failure.html">
+   Coordinate descent failure example
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Generative Adversarial Networks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gans/2021-05-31-GAN.html">
+   A programming introduction to GANs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../neural_networks/2020-03-08-keras-neural-non-linear.html">
+   Some Neural Network Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../neural_networks/2020-02-28-xor-relu-vector.html">
+   Learning neural network for XOR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../neural_networks/2020-03-02-linear-scratch.html">
+   Neural Networks from scratch
   </a>
  </li>
 </ul>
@@ -333,6 +538,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  ML Softwares
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml_softwares/2022-02-09-autograd-pytorch-jax.html">
+   Autograd in JAX and PyTorch
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Appendix 1 - Linear Algebra for ML
  </span>
 </p>
@@ -350,6 +567,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../appendix_1_-_linear_algebra_for_ml/2021-03-15-Positive-semi-definite.html">
    Positive definiteness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix_1_-_linear_algebra_for_ml/2022-02-11-matrix.html">
+   Matrix as transformation and interpreting low rank matrix
   </a>
  </li>
 </ul>
@@ -718,32 +940,32 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="a-quick-wrap-up-for-bayesian-linear-regression-blr">
 <h2>A quick wrap-up for Bayesian Linear Regression (BLR)<a class="headerlink" href="#a-quick-wrap-up-for-bayesian-linear-regression-blr" title="Permalink to this headline">¶</a></h2>
 <p>We have a feature matrix <span class="math notranslate nohighlight">\(X\)</span> and a target vector <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>. We want to obtain <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span> vector in such a way that the error <span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span> for the following equation is minimum.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-826a13ed-b65c-4c07-b916-2225834c9a78">
-<span class="eqno">(31)<a class="headerlink" href="#equation-826a13ed-b65c-4c07-b916-2225834c9a78" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-41f7c8e2-d960-4984-9de9-4b2536adcd81">
+<span class="eqno">(31)<a class="headerlink" href="#equation-41f7c8e2-d960-4984-9de9-4b2536adcd81" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 Y = X\boldsymbol{\theta} + \boldsymbol{\epsilon}
 \end{equation}\]</div>
 <p>Prior PDF for <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span> is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f439527d-d167-408b-a7e1-321e0558d345">
-<span class="eqno">(32)<a class="headerlink" href="#equation-f439527d-d167-408b-a7e1-321e0558d345" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1d4aba0d-bd89-44f3-b1b8-fab18009a19e">
+<span class="eqno">(32)<a class="headerlink" href="#equation-1d4aba0d-bd89-44f3-b1b8-fab18009a19e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 p(\boldsymbol{\theta}) \sim \mathcal{N}(\mathbf{m}_0, S_0)
 \end{equation}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(S_0\)</span> is prior covariance matrix, and <span class="math notranslate nohighlight">\(\mathbf{m}_0\)</span> is prior mean.</p>
 <p>Posterier PDF can be given as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-62c6a5ae-41b9-4525-8185-47ad2e2e7eb7">
-<span class="eqno">(33)<a class="headerlink" href="#equation-62c6a5ae-41b9-4525-8185-47ad2e2e7eb7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3ef3cb9e-9d9e-4a78-83a0-e8e7f6b99680">
+<span class="eqno">(33)<a class="headerlink" href="#equation-3ef3cb9e-9d9e-4a78-83a0-e8e7f6b99680" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 p(\boldsymbol{\theta}|X,\mathbf{y}) \sim \mathcal{N}(\boldsymbol{\theta} | \mathbf{m}_n, S_n) \\
 S_n = (S_0^{-1} + \sigma_{mle}^{-2}X^TX) \\
 \mathbf{m}_n = S_n(S_0^{-1}\mathbf{m}_0+\sigma_{mle}^{-2}X^T\mathbf{y})
 \end{equation}\]</div>
 <p>Maximum likelihood estimation of <span class="math notranslate nohighlight">\(\sigma\)</span> can be calculated as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c74851fe-323c-4ea4-962e-d57734c55923">
-<span class="eqno">(34)<a class="headerlink" href="#equation-c74851fe-323c-4ea4-962e-d57734c55923" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f87e63a2-a8dd-4b73-9e1b-cadb04e51bb7">
+<span class="eqno">(34)<a class="headerlink" href="#equation-f87e63a2-a8dd-4b73-9e1b-cadb04e51bb7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \theta_{mle} = (X^TX)^{-1}X^T\mathbf{y} \\
 \sigma_{mle} = ||\mathbf{y} - X\boldsymbol{\theta}_{mle}||
 \end{equation}\]</div>
 <p>Finally, predicted mean <span class="math notranslate nohighlight">\(\hat{\mathbf{y}}_{mean}\)</span> and predicted covariance matrix <span class="math notranslate nohighlight">\(\hat{Y}_{cov}\)</span> can be given as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2d0b11e1-813f-42e4-8357-415728091025">
-<span class="eqno">(35)<a class="headerlink" href="#equation-2d0b11e1-813f-42e4-8357-415728091025" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f9c8918d-2905-49e9-8be7-0168eca8507e">
+<span class="eqno">(35)<a class="headerlink" href="#equation-f9c8918d-2905-49e9-8be7-0168eca8507e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \hat{\mathbf{y}} \sim \mathcal{N}(\hat{\mathbf{y}}_{mean}, \hat{\mathbf{y}}_{cov}) \\
 \hat{\mathbf{y}}_{mean} = X\mathbf{m}_n \\
 \hat{Y}_{cov} = XS_nX^T
@@ -821,8 +1043,8 @@ S_n = (S_0^{-1} + \sigma_{mle}^{-2}X^TX) \\
 <div class="section" id="creating-visualizing-dataset">
 <h2>Creating &amp; visualizing dataset<a class="headerlink" href="#creating-visualizing-dataset" title="Permalink to this headline">¶</a></h2>
 <p>To start with, let’s create a random dataset with degree 3 polynomial function with some added noise.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8867b5fe-54a4-4524-96bc-2f3a0565d112">
-<span class="eqno">(36)<a class="headerlink" href="#equation-8867b5fe-54a4-4524-96bc-2f3a0565d112" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-415ba4e6-d61d-48cb-bc3c-bf8125f1d78d">
+<span class="eqno">(36)<a class="headerlink" href="#equation-415ba4e6-d61d-48cb-bc3c-bf8125f1d78d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 Y = (5X^3 - 4X^2 + 3X - 2) + \mathcal{N}(0,1)
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -46340,10 +46562,10 @@ MAE for Bayesian Linear Regression is 0.1573800181180475
             <p class="prev-next-title">Query by Committee</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../others/2021-03-24-sigmoid.html" title="next page">
+    <a class='right-next' id="next-link" href="../ml_softwares/2022-02-09-autograd-pytorch-jax.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Autograd in JAX and PyTorch</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
