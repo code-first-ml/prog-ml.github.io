@@ -9,6 +9,7 @@ parts:
 - caption: Continuous Probability Distributions
   chapters:
   - file: notebooks/probability/univariate-normal
+  - file: notebooks/probability/univariate-normal-expectations
   - file: notebooks/probability/mvn-introduction
   - file: notebooks/probability/mvn-marginal
 - caption: Bayesian ML
