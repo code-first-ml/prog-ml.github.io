@@ -815,6 +815,39 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Derivations for moments of univariate normal distribution
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standard-normal">
+   Standard Normal
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expectation">
+   Expectation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variance">
+   Variance
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#affine-transformation-of-standard-normal">
+   Affine Transformation of Standard Normal
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -827,6 +860,39 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Derivations for moments of univariate normal distribution
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standard-normal">
+   Standard Normal
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expectation">
+   Expectation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variance">
+   Variance
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#affine-transformation-of-standard-normal">
+   Affine Transformation of Standard Normal
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -835,6 +901,12 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="section" id="derivations-for-moments-of-univariate-normal-distribution">
 <h1>Derivations for moments of univariate normal distribution<a class="headerlink" href="#derivations-for-moments-of-univariate-normal-distribution" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="standard-normal">
+<h1>Standard Normal<a class="headerlink" href="#standard-normal" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="expectation">
+<h1>Expectation<a class="headerlink" href="#expectation" title="Permalink to this headline">¶</a></h1>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{c}
@@ -857,6 +929,23 @@ Substitute back
 I=\frac{-1}{\sqrt{2 \pi}} e^{-x^{2} / 2}
 \)</span><span class="math notranslate nohighlight">\(
 Definite integral is \)</span>\left.\frac{-1}{\sqrt{2 \pi}} e^{-x^{2}}\right|_{-\infty} ^{\infty}=\frac{-1}{\sqrt{2 \pi}}\left(e^{-\infty}-e^{-\infty}\right)=0$</p>
+<p><img alt="" src="../../_images/gaussian-integral-1.jpg" /></p>
+<p><img alt="" src="../../_images/gaussian-integral-2.jpg" /></p>
+<p><img alt="" src="../../_images/gaussian-integral-3.jpg" /></p>
+</div>
+<div class="section" id="variance">
+<h1>Variance<a class="headerlink" href="#variance" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="affine-transformation-of-standard-normal">
+<h1>Affine Transformation of Standard Normal<a class="headerlink" href="#affine-transformation-of-standard-normal" title="Permalink to this headline">¶</a></h1>
+<p>References</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=U-13q74uvTo">https://www.youtube.com/watch?v=U-13q74uvTo</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=mrcRODAx-Vk">https://www.youtube.com/watch?v=mrcRODAx-Vk</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Gaussian_integral">https://en.wikipedia.org/wiki/Gaussian_integral</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=zbHRUnR9F-4">https://www.youtube.com/watch?v=zbHRUnR9F-4</a> (Very detailed!)</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=l27xKSNad2Y">https://www.youtube.com/watch?v=l27xKSNad2Y</a> (Very intuitive double integral explanation)</p></li>
+</ol>
 </div>
 
     <script type="text/x-thebe-config">
