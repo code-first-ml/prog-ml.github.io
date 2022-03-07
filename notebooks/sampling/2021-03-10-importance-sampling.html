@@ -482,6 +482,16 @@ const thebe_selector_output = ".output, .cell_output"
    Understanding Kernels in Gaussian Processes Regression
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/pyro-deep-gp.html">
+   Deep Kernel Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/pyro-binary-classification.html">
+   GP Classification
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -936,8 +946,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>We can find the marginal likelihood <span class="math notranslate nohighlight">\(z\)</span> using the following technique.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-95bb869e-7703-418c-8631-6e61e5d60010">
-<span class="eqno">(30)<a class="headerlink" href="#equation-95bb869e-7703-418c-8631-6e61e5d60010" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1a217ca1-dacd-486f-82cd-77c6e05aa2fd">
+<span class="eqno">(30)<a class="headerlink" href="#equation-1a217ca1-dacd-486f-82cd-77c6e05aa2fd" title="Permalink to this equation">¶</a></span>\[\begin{align}
 z &amp;= \int likelihood(x)\cdot prior(x)\cdot dx\\
 z &amp;= \int \frac{likelihood(x)\cdot prior(x)}{q(x)}\cdot q(x) \cdot dx\\
 z &amp;= \int w(x) \cdot q(x) \cdot dx\\

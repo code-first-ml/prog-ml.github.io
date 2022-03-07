@@ -482,6 +482,16 @@ const thebe_selector_output = ".output, .cell_output"
    Understanding Kernels in Gaussian Processes Regression
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/pyro-deep-gp.html">
+   Deep Kernel Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gaussian_processes/pyro-binary-classification.html">
+   GP Classification
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -943,8 +953,8 @@ const thebe_selector_output = ".output, .cell_output"
 \mathbf{y} = X\boldsymbol{\theta} + \boldsymbol{\epsilon}
 \]</div>
 <p>In Bayesian settings, we can define the Linear regression as following,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-58dd7321-1dd7-404f-a0eb-67a529e78bfa">
-<span class="eqno">(11)<a class="headerlink" href="#equation-58dd7321-1dd7-404f-a0eb-67a529e78bfa" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e24571f6-4173-43e4-8817-6310b329b43e">
+<span class="eqno">(11)<a class="headerlink" href="#equation-e24571f6-4173-43e4-8817-6310b329b43e" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p(\boldsymbol{\theta}|X, \mathbf{y}) &amp;= \frac{p(\mathbf{y}|X, \boldsymbol{\theta})p(\boldsymbol{\theta})}{p(\mathbf{y}|X)}\\
 \mathcal{N}(\boldsymbol{\theta}|\mathbf{m}_n, S_n) &amp; = \frac{\mathcal{N}(\mathbf{y}|X\boldsymbol{\theta}, \sigma_n^2I)\mathcal{N}(\boldsymbol{\theta}|0, \sigma^2I)}{p(\mathbf{y}|X)}
 \end{align}\]</div>
@@ -975,15 +985,15 @@ p(\boldsymbol{\theta}|X, \mathbf{y}) &amp;= \frac{p(\mathbf{y}|X, \boldsymbol{\t
 <div class="section" id="mle-for-theta">
 <h3>MLE for <span class="math notranslate nohighlight">\(\theta\)</span><a class="headerlink" href="#mle-for-theta" title="Permalink to this headline">¶</a></h3>
 <p>Now, we should be able to appreciate the effectiveness of MLE as we can find such <span class="math notranslate nohighlight">\(\theta\)</span> so that our likelihood of observing given data <span class="math notranslate nohighlight">\(D=\mathbf{y}\)</span> is maximized.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f1c8eed7-389d-4662-85ae-8fdbe51ac816">
-<span class="eqno">(12)<a class="headerlink" href="#equation-f1c8eed7-389d-4662-85ae-8fdbe51ac816" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4c237e45-4e50-4078-a1c8-5644b0ca61e9">
+<span class="eqno">(12)<a class="headerlink" href="#equation-4c237e45-4e50-4078-a1c8-5644b0ca61e9" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p(D|\theta) &amp;= \frac{1}{\sqrt{(2\pi)^N}\sigma_n^N}exp\left[-\sum\limits_{i=1}^{N}\frac{(y_i - \theta x_i)^2}{2\sigma_n^2}\right] \\
 \log p(D|\theta) &amp;= -\frac{N}{2}\log(2\pi\sigma_n^2) - \sum\limits_{i=1}^{N}\frac{(y_i - \theta x_i)^2}{2\sigma_n^2}\\
 \arg\min_\theta\;(-\log p(D|\theta))&amp;= \arg\min_\theta \sum\limits_{i=1}^{N}(y_i - \theta x_i)^2\\
 \end{align}\]</div>
 <p>This turns out as the same cost function in linear regression.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c1279fbb-d6e9-4397-9160-a4b2863d3ea0">
-<span class="eqno">(13)<a class="headerlink" href="#equation-c1279fbb-d6e9-4397-9160-a4b2863d3ea0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fbe6e613-5bf7-49da-84cd-033bdcc2304a">
+<span class="eqno">(13)<a class="headerlink" href="#equation-fbe6e613-5bf7-49da-84cd-033bdcc2304a" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{d}{d\theta} \log p(D|\theta) &amp;= \sum\limits_{i=1}^{N}\frac{(y_i - \theta x_i)x_i}{\sigma_n^2} = 0\\
 \theta_{MLE} &amp;= \frac{\sum\limits_{i=1}^{N}y_ix_i}{\sum\limits_{i=1}^{N}x_i^2}
 \end{align}\]</div>
@@ -7885,8 +7895,8 @@ zFLcvSyybwQw3d2nh5hLRKQ2bgKygcMJxm30Ax43s0MqvaaJJDXNBiBS//5J8OZ0lJnlmtmVwO+B\
 <div class="section" id="map-for-linear-regression">
 <h3>MAP for linear regression<a class="headerlink" href="#map-for-linear-regression" title="Permalink to this headline">¶</a></h3>
 <p>We have assumed a Gaussian distribution over <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span> because likelihood is Gaussian (conjugate priors).</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26832244-3436-4300-9b6c-dd93118d212b">
-<span class="eqno">(14)<a class="headerlink" href="#equation-26832244-3436-4300-9b6c-dd93118d212b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b20b99b5-4cfe-44d0-b55d-d8f8f242e7ed">
+<span class="eqno">(14)<a class="headerlink" href="#equation-b20b99b5-4cfe-44d0-b55d-d8f8f242e7ed" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p(\boldsymbol{\theta}) \sim \mathcal{N}(0, \sigma^2I)
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -15108,8 +15118,8 @@ GrROAYYDdwYZm8SG/w9y3lV6q1SH4gAAAABJRU5ErkJggg==\
 </div></div>
 </div>
 <p>Now, we will find MAP estimate incorporating the prior.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ef00350b-b432-490e-ace3-e34218b025b8">
-<span class="eqno">(15)<a class="headerlink" href="#equation-ef00350b-b432-490e-ace3-e34218b025b8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-aef5230a-6cfc-4606-8ccf-59324e04138e">
+<span class="eqno">(15)<a class="headerlink" href="#equation-aef5230a-6cfc-4606-8ccf-59324e04138e" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p(\theta|D) \propto p(D|\theta)p(\theta) &amp;= \frac{1}{\sqrt{(2\pi)^N}\sigma_n^N}exp\left[-\frac{1}{2}(\mathbf{y}-\theta\mathbf{x})^T(I\sigma_n^2)^{-1}(\mathbf{y}-\theta\mathbf{x})\right] \frac{1}{\sqrt{2\pi \sigma^2}}exp\left[{-\frac{(\theta-0)^2}{2\sigma^2}}\right]
 \\
 \log [p(D|\theta)p(\theta)] &amp;= -\frac{N}{2}\log(2\pi\sigma_n^2) - \sum\limits_{i=1}^{N}\frac{(y_i - \theta x_i)^2}{2\sigma_n^2} - \frac{1}{2}\log(2\pi \sigma^2)-\frac{\theta^2}{2 \sigma^2}\\
@@ -15189,8 +15199,8 @@ p(\theta|D) \propto p(D|\theta)p(\theta) &amp;= \frac{1}{\sqrt{(2\pi)^N}\sigma_n
 <div class="section" id="bayesian-linear-regression-1d-with-bias-term">
 <h2>Bayesian linear regression (1D with bias term)<a class="headerlink" href="#bayesian-linear-regression-1d-with-bias-term" title="Permalink to this headline">¶</a></h2>
 <p>Now, we will programatically explore MLE and MAP for 1D linear regression after including the bias term.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea74cf80-3d73-40e7-85fc-50b80f6704df">
-<span class="eqno">(16)<a class="headerlink" href="#equation-ea74cf80-3d73-40e7-85fc-50b80f6704df" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0192d742-f421-4cee-a847-5f97c89ab42f">
+<span class="eqno">(16)<a class="headerlink" href="#equation-0192d742-f421-4cee-a847-5f97c89ab42f" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathbf{\theta}_{MLE} &amp;= (X^TX)^{-1}X^T\mathbf{y}\\
 \\
 \mathbf{\theta}_{MAP} &amp;= (X^TX + I\frac{\sigma_n^2}{\sigma^2})^{-1}X^T\mathbf{y}
@@ -52848,8 +52858,8 @@ uT1NcCillFJKKaWUUsrtaYJDKaWUUkoppZRSbu//ADPnYD4LwDX8AAAAAElFTkSuQmCC\
 <div class="section" id="posterior-distribution-over-theta">
 <h2>Posterior distribution over <span class="math notranslate nohighlight">\(\theta\)</span><a class="headerlink" href="#posterior-distribution-over-theta" title="Permalink to this headline">¶</a></h2>
 <p>Posterior over <span class="math notranslate nohighlight">\(\theta\)</span> is given as the following,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-94913d5a-af42-4feb-803c-9178c8d6fa85">
-<span class="eqno">(17)<a class="headerlink" href="#equation-94913d5a-af42-4feb-803c-9178c8d6fa85" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a48f75e3-3ef6-4bf6-ae7b-e89f767852dc">
+<span class="eqno">(17)<a class="headerlink" href="#equation-a48f75e3-3ef6-4bf6-ae7b-e89f767852dc" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p(\boldsymbol{\theta}|X, \mathbf{y}) &amp;\sim \mathcal{N}(\mathbf{m}_n, S_n)\\
 \mathbf{m}_n &amp;= \left(X^TX + \frac{\sigma_n^2}{\sigma^2}I\right)X^T\mathbf{y}\\
 S_n &amp;= \left(\frac{1}{\sigma^2}I + \frac{X^TX}{\sigma_n^2}\right)^{-1}
