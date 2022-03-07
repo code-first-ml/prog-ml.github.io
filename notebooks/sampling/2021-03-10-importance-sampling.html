@@ -169,6 +169,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../probability/univariate-normal-expectations.html">
+   Derivations for moments of univariate normal distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../probability/mvn-introduction.html">
    Multivariate Normal Distribution: Introduction
   </a>
@@ -931,8 +936,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>We can find the marginal likelihood <span class="math notranslate nohighlight">\(z\)</span> using the following technique.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c91433e5-0871-4dfb-a4cf-1c9e7b9e3698">
-<span class="eqno">(30)<a class="headerlink" href="#equation-c91433e5-0871-4dfb-a4cf-1c9e7b9e3698" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f3dc354c-62a5-4f23-af4b-f95651aefd22">
+<span class="eqno">(30)<a class="headerlink" href="#equation-f3dc354c-62a5-4f23-af4b-f95651aefd22" title="Permalink to this equation">¶</a></span>\[\begin{align}
 z &amp;= \int likelihood(x)\cdot prior(x)\cdot dx\\
 z &amp;= \int \frac{likelihood(x)\cdot prior(x)}{q(x)}\cdot q(x) \cdot dx\\
 z &amp;= \int w(x) \cdot q(x) \cdot dx\\
