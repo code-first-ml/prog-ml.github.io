@@ -81,6 +81,9 @@ parts:
   - file: notebooks/gaussian_processes/2020-03-29-param-learning.ipynb
   - file: notebooks/gaussian_processes/2021-09-03-param-learning-sgd.ipynb
   - file: notebooks/gaussian_processes/2020-06-26-gp-understand.ipynb
+  - file: notebooks/gaussian_processes/pyro-deep-gp
+  - file: notebooks/gaussian_processes/pyro-binary-classification
+
 - caption: Linear Regression
   chapters:
   - file: notebooks/linear_regression/2022_02_21_coordinate_descent_failure.ipynb
