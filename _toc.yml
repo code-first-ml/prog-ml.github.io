@@ -36,9 +36,11 @@ parts:
 - caption: Mixture Models
   chapters:
   - file: notebooks/mixture_models/2022-02-14-GMM.ipynb
-- caption: KL-divergence
+- caption: Information Theory
   chapters:
-  - file: notebooks/kl_divergence/2022-01-29-kl-divergence.ipynb
+  - file: notebooks/information_theory/kl-divergence.ipynb
+  - file: notebooks/information_theory/jensen-inequality.ipynb
+
 - caption: Variational Models
   chapters:
   - file: notebooks/variational_models/2022-02-12-variational-inference.ipynb
