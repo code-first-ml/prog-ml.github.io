@@ -640,7 +640,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../active_learning/2022-03-06-maximal-expected-error-reduction.html">
-   “Active Learning : Maximal Expected Error Reduction”
+   Problem with Expected Model Change
   </a>
  </li>
 </ul>
@@ -27491,16 +27491,16 @@ gCnVfoYD/3a7EUpFCi1gSrWfYcBXbjdCqUihBUyp9hMDHCMi2SKS7nZjlPI6LWBKtZ+ZwOXANuwt\
 </div></div>
 </div>
 <p>Let’s check for expected value and variance of <span class="math notranslate nohighlight">\(f(t)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-ed779055-d1c9-493c-84e0-916356774017">
-<span class="eqno">(37)<a class="headerlink" href="#equation-ed779055-d1c9-493c-84e0-916356774017" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d26a34ff-aae9-4d07-8832-3794a9e9c7fc">
+<span class="eqno">(37)<a class="headerlink" href="#equation-d26a34ff-aae9-4d07-8832-3794a9e9c7fc" title="Permalink to this equation">¶</a></span>\[\begin{align}
 f(t) &amp;= f(t-1) + I, \text{   where, } I \text{ takes value 1 or -1 with equal probability}\\
 \mathbb{E}(f(t)) &amp;= \mathbb{E}(f(t-1)) + \mathbb{E}(I)\\
                  &amp;= \sum\limits_{time=0}^{t}\mathbb{E}(I)\\
 \mathbb{E}(f(t)) &amp;= 0
 \end{align}\]</div>
 <p>And, variance</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd23b3e0-4ab3-4594-9978-9139cb7ddf94">
-<span class="eqno">(38)<a class="headerlink" href="#equation-bd23b3e0-4ab3-4594-9978-9139cb7ddf94" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fbe3003c-0953-4a85-b61a-60b29cc7f018">
+<span class="eqno">(38)<a class="headerlink" href="#equation-fbe3003c-0953-4a85-b61a-60b29cc7f018" title="Permalink to this equation">¶</a></span>\[\begin{align}
 V(f(t)) &amp;= \sum\limits_{T=0}^{t}V(I)\\
         &amp;= \sum\limits_{T=0}^{t}(\mathbb{E}(I^2) - (\mathbb{E}(I))^2\\
         &amp;= \sum\limits_{T=0}^{t}\mathbb{E}(I^2)\\
