@@ -646,10 +646,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  ML Softwares
+  JAX
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../jax/introduction-jax.html">
+   Using PRNG key
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../ml_softwares/2022-02-09-autograd-pytorch-jax.html">
    Autograd in JAX and PyTorch
@@ -951,8 +956,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>We can find the marginal likelihood <span class="math notranslate nohighlight">\(z\)</span> using the following technique.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b6eaaf48-bb94-4593-a40e-2c0a7a59e64a">
-<span class="eqno">(30)<a class="headerlink" href="#equation-b6eaaf48-bb94-4593-a40e-2c0a7a59e64a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-367344a0-2e75-41a9-b963-906f3d0984f7">
+<span class="eqno">(30)<a class="headerlink" href="#equation-367344a0-2e75-41a9-b963-906f3d0984f7" title="Permalink to this equation">¶</a></span>\[\begin{align}
 z &amp;= \int likelihood(x)\cdot prior(x)\cdot dx\\
 z &amp;= \int \frac{likelihood(x)\cdot prior(x)}{q(x)}\cdot q(x) \cdot dx\\
 z &amp;= \int w(x) \cdot q(x) \cdot dx\\
