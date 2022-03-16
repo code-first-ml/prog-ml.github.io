@@ -122,8 +122,9 @@ parts:
       - file: notebooks/active_learning/2020-04-21-active-learning-with-bayesian-linear-regression
       - file: notebooks/active_learning/2022-03-06-maximal-expected-error-reduction
 
-  - caption: ML Softwares
+  - caption: JAX
     chapters:
+      - file: notebooks/jax/introduction-jax.ipynb
       - file: notebooks/ml_softwares/2022-02-09-autograd-pytorch-jax.ipynb
       - file: notebooks/ml_softwares/2017-08-12-linear-regression-adagrad-vs-gd.ipynb
   - caption: Others
