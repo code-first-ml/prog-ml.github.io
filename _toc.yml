@@ -85,6 +85,7 @@ parts:
       - file: notebooks/gaussian_processes/2020-06-26-gp-understand.ipynb
       - file: notebooks/gaussian_processes/pyro-deep-gp
       - file: notebooks/gaussian_processes/pyro-binary-classification
+      - file: notebooks/gaussian_processes/simulate-learn-params.ipynb
 
   - caption: Linear Regression
     chapters:
