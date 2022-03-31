@@ -4,6 +4,7 @@ parts:
   - caption: Introduction
     chapters:
       - file: notebooks/introduction/mle_coin
+      - file: notebooks/introduction/variational
   - caption: Probability Basics
     chapters:
       - file: notebooks/probability/sample-space
