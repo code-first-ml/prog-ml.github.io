@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Creating a dataset &#8212; Prog-ML</title>
+    <title>MLE, MAP and Fully Bayesian (conjugate prior and MCMC) for coin toss &#8212; Prog-ML</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -90,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Sample Space" href="../probability/sample-space.html" />
+    <link rel="next" title="Variational Inference from scratch in JAX" href="variational.html" />
     <link rel="prev" title="Prog-ML" href="../../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -143,7 +143,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Creating a dataset
+   MLE, MAP and Fully Bayesian (conjugate prior and MCMC) for coin toss
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="variational.html">
+   Variational Inference from scratch in JAX
   </a>
  </li>
 </ul>
@@ -852,37 +857,49 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mle">
-   MLE
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   MLE, MAP and Fully Bayesian (conjugate prior and MCMC) for coin toss
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#obtaining-mle-analytically">
-     Obtaining MLE analytically
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-dataset">
+   Creating a dataset
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mle">
+     MLE
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#obtaining-mle-analytically">
+       Obtaining MLE analytically
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-mle-parameters-via-gradient-descent">
+     Learning MLE parameters via gradient descent
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#map">
+     MAP
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analytical-posterior">
+     Analytical Posterior
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mcmc">
+     MCMC
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-mle-parameters-via-gradient-descent">
-   Learning MLE parameters via gradient descent
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#map">
-   MAP
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analytical-posterior">
-   Analytical Posterior
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mcmc">
-   MCMC
-  </a>
  </li>
 </ul>
 
@@ -894,7 +911,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Creating a dataset</h1>
+                <h1>MLE, MAP and Fully Bayesian (conjugate prior and MCMC) for coin toss</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -904,37 +921,49 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mle">
-   MLE
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   MLE, MAP and Fully Bayesian (conjugate prior and MCMC) for coin toss
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#obtaining-mle-analytically">
-     Obtaining MLE analytically
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-dataset">
+   Creating a dataset
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mle">
+     MLE
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#obtaining-mle-analytically">
+       Obtaining MLE analytically
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-mle-parameters-via-gradient-descent">
+     Learning MLE parameters via gradient descent
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#map">
+     MAP
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analytical-posterior">
+     Analytical Posterior
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mcmc">
+     MCMC
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-mle-parameters-via-gradient-descent">
-   Learning MLE parameters via gradient descent
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#map">
-   MAP
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analytical-posterior">
-   Analytical Posterior
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mcmc">
-   MCMC
-  </a>
  </li>
 </ul>
 
@@ -945,7 +974,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="cell docutils container">
+  <div class="section" id="mle-map-and-fully-bayesian-conjugate-prior-and-mcmc-for-coin-toss">
+<h1>MLE, MAP and Fully Bayesian (conjugate prior and MCMC) for coin toss<a class="headerlink" href="#mle-map-and-fully-bayesian-conjugate-prior-and-mcmc-for-coin-toss" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">jax</span>
@@ -962,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="ne">ModuleNotFoundError</span>
     <span class="o">%</span><span class="k">pip</span> install tensorflow_probability
     <span class="kn">from</span> <span class="nn">tensorflow_probability.substrates</span> <span class="kn">import</span> <span class="n">jax</span> <span class="k">as</span> <span class="n">tfp</span>
-    
+
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">daft</span>
 <span class="k">except</span><span class="p">:</span>
@@ -986,12 +1017,12 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="kn">from</span> <span class="nn">rich</span> <span class="kn">import</span> <span class="nb">print</span>
     <span class="kn">from</span> <span class="nn">rich.table</span> <span class="kn">import</span> <span class="n">Table</span>
 
-    
-    
+
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1006,6 +1037,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dist</span> <span class="o">=</span> <span class="n">tfp</span><span class="o">.</span><span class="n">distributions</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1075,7 +1107,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>As per the principal of MLE, the best estimate for <span class="math notranslate nohighlight">\(\theta = p(H) = \dfrac{n_h}{n_h+n_t}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mle_estimate</span>  <span class="o">=</span> <span class="n">dataset_100</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="mi">100</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mle_estimate</span> <span class="o">=</span> <span class="n">dataset_100</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">100</span>
 <span class="n">mle_estimate</span>
 </pre></div>
 </div>
@@ -1101,7 +1133,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/mle_coin_10_0.png" src="../../_images/mle_coin_10_0.png" />
+<img alt="../../_images/mle_coin_11_0.png" src="../../_images/mle_coin_11_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1130,7 +1162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># None for second argument as we don&#39;t need vmap for dataset</span>
-<span class="n">neg_log_likelihood_vmap</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="n">neg_log_likelihood</span><span class="p">,</span> <span class="n">in_axes</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span> 
+<span class="n">neg_log_likelihood_vmap</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="n">neg_log_likelihood</span><span class="p">,</span> <span class="n">in_axes</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1147,7 +1179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_array</span><span class="p">,</span> <span class="n">nll_array</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;True $\theta$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;True $\theta$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Negative Log Likelihood&quot;</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\theta$&quot;</span><span class="p">)</span>
@@ -1155,7 +1187,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/mle_coin_17_0.png" src="../../_images/mle_coin_17_0.png" />
+<img alt="../../_images/mle_coin_18_0.png" src="../../_images/mle_coin_18_0.png" />
 </div>
 </div>
 </div>
@@ -1269,7 +1301,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/mle_coin_26_0.png" src="../../_images/mle_coin_26_0.png" />
+<img alt="../../_images/mle_coin_27_0.png" src="../../_images/mle_coin_27_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1302,7 +1334,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/mle_coin_30_0.png" src="../../_images/mle_coin_30_0.png" />
+<img alt="../../_images/mle_coin_31_0.png" src="../../_images/mle_coin_31_0.png" />
 </div>
 </div>
 <p>Now, given a <span class="math notranslate nohighlight">\(\theta\)</span>, we can evaluate the log prior and log likelihood and optimize their sum them to obtain the MAP estimate.</p>
@@ -1415,7 +1447,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p><span class="math notranslate nohighlight">\(P(\theta|Data) \sim Beta(\#Heads~in~Data + \alpha, \#Tails~in~Data + \beta)\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analytical_posterior</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Beta</span><span class="p">(</span><span class="n">dataset_100</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="n">prior_alpha</span><span class="p">,</span> <span class="mf">100.</span><span class="o">-</span><span class="n">dataset_100</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="n">prior_beta</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analytical_posterior</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Beta</span><span class="p">(</span>
+    <span class="n">dataset_100</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="n">prior_alpha</span><span class="p">,</span> <span class="mf">100.0</span> <span class="o">-</span> <span class="n">dataset_100</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="n">prior_beta</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1435,9 +1469,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_array</span><span class="p">,</span> <span class="n">analytical_posterior</span><span class="o">.</span><span class="n">prob</span><span class="p">(</span><span class="n">theta_array</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Posterior&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_array</span><span class="p">,</span> <span class="n">prior_dist</span><span class="o">.</span><span class="n">prob</span><span class="p">(</span><span class="n">theta_array</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prior&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;True $\theta$&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_array</span><span class="p">,</span> <span class="n">analytical_posterior</span><span class="o">.</span><span class="n">prob</span><span class="p">(</span><span class="n">theta_array</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Posterior&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_array</span><span class="p">,</span> <span class="n">prior_dist</span><span class="o">.</span><span class="n">prob</span><span class="p">(</span><span class="n">theta_array</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Prior&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;True $\theta$&quot;</span><span class="p">)</span>
 
 
 <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
@@ -1450,14 +1484,14 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1318a1fa0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/mle_coin_43_1.png" src="../../_images/mle_coin_43_1.png" />
+<img alt="../../_images/mle_coin_44_1.png" src="../../_images/mle_coin_44_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_array</span><span class="p">,</span> <span class="n">analytical_posterior</span><span class="o">.</span><span class="n">log_prob</span><span class="p">(</span><span class="n">theta_array</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Log Posterior&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_array</span><span class="p">,</span> <span class="n">prior_dist</span><span class="o">.</span><span class="n">log_prob</span><span class="p">(</span><span class="n">theta_array</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Log Prior&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;True $\theta$&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_array</span><span class="p">,</span> <span class="n">analytical_posterior</span><span class="o">.</span><span class="n">log_prob</span><span class="p">(</span><span class="n">theta_array</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Log Posterior&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_array</span><span class="p">,</span> <span class="n">prior_dist</span><span class="o">.</span><span class="n">log_prob</span><span class="p">(</span><span class="n">theta_array</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Log Prior&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;True $\theta$&quot;</span><span class="p">)</span>
 
 
 <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
@@ -1470,7 +1504,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1319f87c0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/mle_coin_44_1.png" src="../../_images/mle_coin_44_1.png" />
+<img alt="../../_images/mle_coin_45_1.png" src="../../_images/mle_coin_45_1.png" />
 </div>
 </div>
 </div>
@@ -1481,8 +1515,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@jax</span><span class="o">.</span><span class="n">jit</span>
 <span class="k">def</span> <span class="nf">next_sample</span><span class="p">(</span><span class="n">cur_sample</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">dist</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="n">cur_sample</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> 
-                       <span class="n">validate_args</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">sample_shape</span><span class="o">=</span><span class="p">()</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">dist</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">cur_sample</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">validate_args</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+        <span class="n">seed</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">sample_shape</span><span class="o">=</span><span class="p">()</span>
+    <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1543,16 +1578,16 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">keys</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">num_iter</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_iter</span><span class="p">):</span>
-    <span class="n">ns</span> <span class="o">=</span> <span class="n">next_sample</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">ns</span> <span class="o">=</span> <span class="n">next_sample</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="k">if</span> <span class="n">ns</span> <span class="o">&gt;</span> <span class="mf">0.99</span><span class="p">:</span>
         <span class="n">ns</span> <span class="o">=</span> <span class="mf">0.99</span>
     <span class="k">if</span> <span class="n">ns</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">:</span>
         <span class="n">ns</span> <span class="o">=</span> <span class="mf">0.01</span>
     <span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ns</span>
-    <span class="n">la</span> <span class="o">=</span> <span class="n">lp</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="n">lp</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">la</span> <span class="o">=</span> <span class="n">lp</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="n">lp</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
 
     <span class="k">if</span> <span class="n">lu</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">la</span><span class="p">:</span>
-        <span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xs</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1573,21 +1608,27 @@ WARNING:root:The use of `check_types` is deprecated and does not have any effect
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x131af5790&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/mle_coin_52_1.png" src="../../_images/mle_coin_52_1.png" />
+<img alt="../../_images/mle_coin_53_1.png" src="../../_images/mle_coin_53_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MCMC estimate density&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">onp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MCMC histogram&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_array</span><span class="p">,</span> <span class="n">analytical_posterior</span><span class="o">.</span><span class="n">prob</span><span class="p">(</span><span class="n">theta_array</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Posterior&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MCMC estimate density&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">onp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MCMC histogram&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">theta_array</span><span class="p">,</span>
+    <span class="n">analytical_posterior</span><span class="o">.</span><span class="n">prob</span><span class="p">(</span><span class="n">theta_array</span><span class="p">),</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Posterior&quot;</span><span class="p">,</span>
+    <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/mle_coin_53_0.png" src="../../_images/mle_coin_53_0.png" />
+<img alt="../../_images/mle_coin_54_0.png" src="../../_images/mle_coin_54_0.png" />
 </div>
 </div>
 <p>TODO</p>
@@ -1634,10 +1675,10 @@ WARNING:root:The use of `check_types` is deprecated and does not have any effect
             <p class="prev-next-title">Prog-ML</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../probability/sample-space.html" title="next page">
+    <a class='right-next' id="next-link" href="variational.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sample Space</p>
+        <p class="prev-next-title">Variational Inference from scratch in JAX</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

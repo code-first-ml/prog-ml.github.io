@@ -141,7 +141,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="introduction/mle_coin.html">
-   Creating a dataset
+   MLE, MAP and Fully Bayesian (conjugate prior and MCMC) for coin toss
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction/variational.html">
+   Variational Inference from scratch in JAX
   </a>
  </li>
 </ul>
@@ -1379,8 +1384,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Ok, let us know try to plot a few jointplots for different covariance matrices. We would be passing in the values of <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(\rho\)</span> which would make up the covariance matrix as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0456c180-5bcf-4b78-aae8-1fdb17ea7719">
-<span class="eqno">()<a class="headerlink" href="#equation-0456c180-5bcf-4b78-aae8-1fdb17ea7719" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-c110249d-b2fb-4cef-a99a-3ba6454024e8">
+<span class="eqno">()<a class="headerlink" href="#equation-c110249d-b2fb-4cef-a99a-3ba6454024e8" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
  a &amp; \rho \\
  \rho &amp; b
 \end{bmatrix}\]</div>

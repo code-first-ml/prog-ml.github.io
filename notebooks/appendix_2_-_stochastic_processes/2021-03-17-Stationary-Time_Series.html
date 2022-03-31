@@ -143,7 +143,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/mle_coin.html">
-   Creating a dataset
+   MLE, MAP and Fully Bayesian (conjugate prior and MCMC) for coin toss
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/variational.html">
+   Variational Inference from scratch in JAX
   </a>
  </li>
 </ul>
@@ -1128,16 +1133,16 @@ X_t = \sum\limits_{i=1}^{p}\phi_iX_{t-i} + \epsilon_t
 <div class="section" id="characteristic-equation-and-unit-root">
 <h3>Characteristic equation and unit root<a class="headerlink" href="#characteristic-equation-and-unit-root" title="Permalink to this headline">¶</a></h3>
 <p>AutoRegressive(1) model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26ba0484-66fe-4941-a683-d012e659a2d6">
-<span class="eqno">(39)<a class="headerlink" href="#equation-26ba0484-66fe-4941-a683-d012e659a2d6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1988ff09-6bab-4dfd-bc2f-264749219567">
+<span class="eqno">(39)<a class="headerlink" href="#equation-1988ff09-6bab-4dfd-bc2f-264749219567" title="Permalink to this equation">¶</a></span>\[\begin{align}
 X_t - \phi_1X_{t-1} &amp;= a_t \\
 (1-\phi_1B)X_t &amp;= a_t \\
 \text{Char. eq.}\\
 1 - \phi_1Z &amp;= 0
 \end{align}\]</div>
 <p>AutoRegressive(2) model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ea538ab-b773-41c7-a411-42073f69522e">
-<span class="eqno">(40)<a class="headerlink" href="#equation-5ea538ab-b773-41c7-a411-42073f69522e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-63ae0808-6de9-4783-a5b7-e75d9bede8f6">
+<span class="eqno">(40)<a class="headerlink" href="#equation-63ae0808-6de9-4783-a5b7-e75d9bede8f6" title="Permalink to this equation">¶</a></span>\[\begin{align}
 X_t - \phi_1X_{t-1} - \phi_2X_{t-2}&amp;= a_t \\
 X_t- \phi_1 BX_t -\phi_2 B^2 X_t &amp;=   a_t \\
 X_t\left[ 1 - \phi_1 B - \phi_2 B^2  \right] &amp;= a_t \\

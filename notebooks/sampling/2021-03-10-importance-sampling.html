@@ -143,7 +143,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/mle_coin.html">
-   Creating a dataset
+   MLE, MAP and Fully Bayesian (conjugate prior and MCMC) for coin toss
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/variational.html">
+   Variational Inference from scratch in JAX
   </a>
  </li>
 </ul>
@@ -968,8 +973,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>We can find the marginal likelihood <span class="math notranslate nohighlight">\(z\)</span> using the following technique.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0e2dc117-072e-4a68-b46f-8a295235e390">
-<span class="eqno">(30)<a class="headerlink" href="#equation-0e2dc117-072e-4a68-b46f-8a295235e390" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0a3c37eb-8c77-43f2-8db8-83bc96eb3ad2">
+<span class="eqno">(30)<a class="headerlink" href="#equation-0a3c37eb-8c77-43f2-8db8-83bc96eb3ad2" title="Permalink to this equation">¶</a></span>\[\begin{align}
 z &amp;= \int likelihood(x)\cdot prior(x)\cdot dx\\
 z &amp;= \int \frac{likelihood(x)\cdot prior(x)}{q(x)}\cdot q(x) \cdot dx\\
 z &amp;= \int w(x) \cdot q(x) \cdot dx\\

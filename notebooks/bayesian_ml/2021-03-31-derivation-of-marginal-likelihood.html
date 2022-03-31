@@ -143,7 +143,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/mle_coin.html">
-   Creating a dataset
+   MLE, MAP and Fully Bayesian (conjugate prior and MCMC) for coin toss
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/variational.html">
+   Variational Inference from scratch in JAX
   </a>
  </li>
 </ul>
@@ -919,15 +924,15 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Marginal likelihood for Bayesian linear regression<a class="headerlink" href="#marginal-likelihood-for-bayesian-linear-regression" title="Permalink to this headline">¶</a></h1>
 <p>Author: <a class="reference external" href="https://patel-zeel.github.io/">Zeel B Patel</a>, <a class="reference external" href="https://nipunbatra.github.io/">Nipun Batra</a></p>
 <p>Bayesian linear regression is defined as below,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6dee4a20-7884-437b-b627-6e72ae314e2c">
-<span class="eqno">(18)<a class="headerlink" href="#equation-6dee4a20-7884-437b-b627-6e72ae314e2c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f85093de-b53e-46fd-814d-730d03fab3a0">
+<span class="eqno">(18)<a class="headerlink" href="#equation-f85093de-b53e-46fd-814d-730d03fab3a0" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathbf{y} &amp;= X\boldsymbol{\theta} + \epsilon\\
 \epsilon &amp;\sim \mathcal{N}(0, \sigma_n^2)\\
 \theta &amp;\sim \mathcal{N}(\mathbf{m}_0, S_0)
 \end{align}\]</div>
 <p>For a Gaussian random variable <span class="math notranslate nohighlight">\(\mathbf{z} \sim \mathcal{N}(\boldsymbol{\mu}, \Sigma)\)</span>, <span class="math notranslate nohighlight">\(A\mathbf{z} + \mathbf{b}\)</span> is also a Gaussian random variable.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-233d140b-ed08-49d3-a831-beddcbcddb05">
-<span class="eqno">(19)<a class="headerlink" href="#equation-233d140b-ed08-49d3-a831-beddcbcddb05" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9f1e61d6-3c65-4577-a2e0-b029de92e194">
+<span class="eqno">(19)<a class="headerlink" href="#equation-9f1e61d6-3c65-4577-a2e0-b029de92e194" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathbf{y} = X\mathbf{\theta} + \boldsymbol{\epsilon} &amp;\sim \mathcal{N}(\boldsymbol{\mu}', \Sigma')\\
 \boldsymbol{\mu}' &amp;= \mathbb{E}_{\theta, \epsilon}(X\mathbf{\theta}+\boldsymbol{\epsilon})\\
                   &amp;= X\mathbb{E}(\mathbf{\theta}) + \mathbb{E}(\mathbf{\epsilon})\\
@@ -938,16 +943,16 @@ const thebe_selector_output = ".output, .cell_output"
         &amp;= XS_0X^T + \sigma_n^2I
 \end{align}\]</div>
 <p>Marginal likelihood is <span class="math notranslate nohighlight">\(p(\mathbf{y})\)</span> so,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1b3e0451-82b6-4c99-a9c9-89162a9bb7bd">
-<span class="eqno">(20)<a class="headerlink" href="#equation-1b3e0451-82b6-4c99-a9c9-89162a9bb7bd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-63cbc879-3677-4d8e-a669-dfcf03380ae7">
+<span class="eqno">(20)<a class="headerlink" href="#equation-63cbc879-3677-4d8e-a669-dfcf03380ae7" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p(\mathbf{y}) &amp;= \frac{1}{(2\pi)^{\frac{N}{2}}|\Sigma'|^{\frac{1}{2}}}\exp\left[-\frac{1}{2}(\mathbf{y}-\boldsymbol{\mu}')^T\Sigma'^{-1}(\mathbf{y}-\boldsymbol{\mu}')\right]\\
               &amp;= \frac{1}{(2\pi)^{\frac{N}{2}}|XS_0X^T + \sigma_n^2I|^{\frac{1}{2}}}\exp\left[-\frac{1}{2}(\mathbf{y}-X\mathbf{m}_0)^T(XS_0X^T + \sigma_n^2I)^{-1}(\mathbf{y}-X\mathbf{m}_0)\right]
 \end{align}\]</div>
 <div class="section" id="multiplication-of-two-gaussians-work-in-progress">
 <h2>Multiplication of two Gaussians (work in progress)<a class="headerlink" href="#multiplication-of-two-gaussians-work-in-progress" title="Permalink to this headline">¶</a></h2>
 <p>We need Gaussian pdf over same variables to evaluate their multiplication. Let us convert <span class="math notranslate nohighlight">\(y\)</span> into <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-158e2271-b694-4536-924e-aa3ab7aee611">
-<span class="eqno">(21)<a class="headerlink" href="#equation-158e2271-b694-4536-924e-aa3ab7aee611" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-40b9bbde-4e42-4be9-bbf7-7e093435055d">
+<span class="eqno">(21)<a class="headerlink" href="#equation-40b9bbde-4e42-4be9-bbf7-7e093435055d" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathbf{y} &amp;= X\theta + \boldsymbol{\epsilon}\\
 \theta &amp;= (X^TX)^{-1}X^T(\mathbf{y} - \boldsymbol{\epsilon})\\
 \text{Deriving mean and covariance of }\theta\\
@@ -957,8 +962,8 @@ V(\theta) &amp;= \sigma_n^2\left[(X^TX)^{-1}X^T\right]\left[(X^TX)^{-1}X^T\right
           &amp;= \sigma_n^2(X^TX)^{-1} 
 \end{align}\]</div>
 <p>Now, we have both <span class="math notranslate nohighlight">\(p(\mathbf{y}|\boldsymbol{\theta})\)</span> and <span class="math notranslate nohighlight">\(p(\boldsymbol{\theta})\)</span> in terms of <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span>. We can apply the rules from 6.5.2 of MML book. Writing our results in terminology of 6.5.2.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ec4b6168-5740-47fb-bc42-65a59e7cfdf1">
-<span class="eqno">(22)<a class="headerlink" href="#equation-ec4b6168-5740-47fb-bc42-65a59e7cfdf1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b9f7e741-c951-4689-9cd6-fb22eb860d06">
+<span class="eqno">(22)<a class="headerlink" href="#equation-b9f7e741-c951-4689-9cd6-fb22eb860d06" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathcal{N}(x|a, A) &amp;== \mathcal{N}(\theta|(X^TX)^{-1}X^T\mathbf{y}, \sigma_n^2(X^TX)^{-1})\\
 \mathcal{N}(x|b, B) &amp;== \mathcal{N}(\theta|\mathbf{m}_0, S_0)
 \end{align}\]</div>
@@ -969,8 +974,8 @@ c\mathcal{N}(\theta|\mathbf{c}, C) = \mathcal{N}(x|a, A)\mathcal{N}(x|b, B)\\
 \mathcal{N}(\theta|\mathbf{c}, C) = \frac{\mathcal{N}(x|a, A)\mathcal{N}(x|b, B)}{c}
 \end{split}\]</div>
 <p>In the Bayesian setting,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2da8e486-8de8-4354-8609-5a57b6a45bb0">
-<span class="eqno">(23)<a class="headerlink" href="#equation-2da8e486-8de8-4354-8609-5a57b6a45bb0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1d7feda3-f35b-4bfc-ad09-8edb653c55e2">
+<span class="eqno">(23)<a class="headerlink" href="#equation-1d7feda3-f35b-4bfc-ad09-8edb653c55e2" title="Permalink to this equation">¶</a></span>\[\begin{align}
 Prior &amp;\sim \mathcal{N}(x|b, B) == \mathcal{N}(\theta|\mathbf{m}_0, S_0)\\
 Likelihood &amp;\sim \mathcal{N}(x|a, A) == \mathcal{N}(\theta|(X^TX)^{-1}X^T\mathbf{y}, \sigma_n^2(X^TX)^{-1})\\
 Posterior &amp;\sim \mathcal{N}(\theta|\mathbf{c}, C) == \mathcal{N}(\theta|\mathbf{m}_n, S_n)\\
@@ -978,8 +983,8 @@ Posterior &amp;\sim \mathcal{N}(\theta|\mathbf{c}, C) == \mathcal{N}(\theta|\mat
 Marginal\;likelihood &amp;\sim c == \mathcal{N}(\mathbf{y}|\boldsymbol{\mu}, \Sigma)
 \end{align}\]</div>
 <p>Let us evaluate the posterior,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-29f40d5a-0920-41fd-80fd-e425fe3efa2f">
-<span class="eqno">(24)<a class="headerlink" href="#equation-29f40d5a-0920-41fd-80fd-e425fe3efa2f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f33d72bf-1559-42b2-8224-805aadce0917">
+<span class="eqno">(24)<a class="headerlink" href="#equation-f33d72bf-1559-42b2-8224-805aadce0917" title="Permalink to this equation">¶</a></span>\[\begin{align}
 Posterior &amp;\sim \mathcal{N}(\theta|\mathbf{c}, C)\\
 S_n = C &amp;= (A^{-1} + B^{-1})^{-1}\\
   &amp;= \left(\frac{X^TX}{\sigma_n^2} + S_0^{-1}\right)^{-1}\\
@@ -988,8 +993,8 @@ S_n = C &amp;= (A^{-1} + B^{-1})^{-1}\\
            &amp;= S_n\left(\frac{X^T\mathbf{y}}{\sigma_n^2} + S_0^{-1}\mathbf{m}_0\right)
 \end{align}\]</div>
 <p>Now, we evaluate the marginal likelihood,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dc4c1b62-6c24-474c-a3cf-78aafef80389">
-<span class="eqno">(25)<a class="headerlink" href="#equation-dc4c1b62-6c24-474c-a3cf-78aafef80389" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-28a5de82-da2e-412a-b4f5-a0744c8d3d31">
+<span class="eqno">(25)<a class="headerlink" href="#equation-28a5de82-da2e-412a-b4f5-a0744c8d3d31" title="Permalink to this equation">¶</a></span>\[\begin{align}
 c &amp;= \mathcal{N}(\mathbf{y}|\boldsymbol{\mu}, \Sigma)\\
   &amp;= (2\pi)^{-\frac{D}{2}}|A+B|^{-\frac{1}{2}}\exp\left(-\frac{1}{2}(a-b)^T(A+B)^{-1}(a-b)\right)\\
   &amp;= (2\pi)^{-\frac{D}{2}}|\sigma_n^2(X^TX)^{-1}+S_0|^{-\frac{1}{2}}\exp\left(-\frac{1}{2}((X^TX)^{-1}X^T\mathbf{y}-\mathbf{m}_0)^T(\sigma_n^2(X^TX)^{-1}+S_0)^{-1}((X^TX)^{-1}X^T\mathbf{y}-\mathbf{m}_0)\right)
@@ -1045,15 +1050,15 @@ p(\mathbf{y}) \sim \mathcal{N}(X\mathbf{m}_0, XS_0X^T + \sigma_n^2I)
 <div class="section" id="products-of-gaussian-pdfs-work-under-progress">
 <h3>Products of Gaussian PDFs (Work under progress)<a class="headerlink" href="#products-of-gaussian-pdfs-work-under-progress" title="Permalink to this headline">¶</a></h3>
 <p>Product of two Gaussians <span class="math notranslate nohighlight">\(\mathbf{x} \sim \mathcal{N}(\boldsymbol{\mu}_0, \Sigma_0)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x} \sim \mathcal{N}(\boldsymbol{\mu}_1, \Sigma_1)\)</span> is an unnormalized Gaussian.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ffea49a4-1ccc-422d-8e8d-8098346bc3bd">
-<span class="eqno">(26)<a class="headerlink" href="#equation-ffea49a4-1ccc-422d-8e8d-8098346bc3bd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-30da72b7-2b03-4bc5-9c1a-320c0d987b6b">
+<span class="eqno">(26)<a class="headerlink" href="#equation-30da72b7-2b03-4bc5-9c1a-320c0d987b6b" title="Permalink to this equation">¶</a></span>\[\begin{align}
 f(\mathbf{x}) &amp;= \frac{1}{(2\pi)^{\frac{N}{2}}|\Sigma_0|^{\frac{1}{2}}}\exp\left[-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu}_0)^T\Sigma_0^{-1}(\mathbf{x}-\boldsymbol{\mu}_0)\right]\\
 g(\mathbf{x}) &amp;= \frac{1}{(2\pi)^{\frac{N}{2}}|\Sigma_1|^{\frac{1}{2}}}\exp\left[-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu}_1)^T\Sigma_1^{-1}(\mathbf{x}-\boldsymbol{\mu}_1)\right]\\
 \int h(x) = \frac{1}{c}\int f(\mathbf{x})g(\mathbf{x})d\mathbf{x} &amp;= 1
 \end{align}\]</div>
 <p>We need to find figure out value of <span class="math notranslate nohighlight">\(c\)</span> to solve the integration.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-270b6ac2-f353-4eca-83de-8f30e98f8379">
-<span class="eqno">(27)<a class="headerlink" href="#equation-270b6ac2-f353-4eca-83de-8f30e98f8379" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-39924ebd-c143-4d55-a3e6-69d8c6d1d328">
+<span class="eqno">(27)<a class="headerlink" href="#equation-39924ebd-c143-4d55-a3e6-69d8c6d1d328" title="Permalink to this equation">¶</a></span>\[\begin{align}
 h(x) &amp;= \frac{1}{(2\pi)^{\frac{N}{2}}|\Sigma|^{\frac{1}{2}}}\exp\left[-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu})^T\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu})\right] =  \frac{1}{(2\pi)^{\frac{N}{2}}|\Sigma|^{\frac{1}{2}}}\exp\left[-\frac{1}{2}\left(\mathbf{x}^T\Sigma^{-1}\mathbf{x} - 2\boldsymbol{\mu}^T\Sigma^{-1}\mathbf{x} + \boldsymbol{\mu}^T\Sigma^{-1}\boldsymbol{\mu}\right)\right]\\ 
 f(x)g(x) &amp;= \frac{1}{(2\pi)^{\frac{N}{2}}|\Sigma_0|^{\frac{1}{2}}(2\pi)^{\frac{N}{2}}|\Sigma_1|^{\frac{1}{2}}}\exp\left[
 -\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu}_0)^T\Sigma_0^{-1}(\mathbf{x}-\boldsymbol{\mu}_0) 
@@ -1063,8 +1068,8 @@ f(x)g(x) &amp;= \frac{1}{(2\pi)^{\frac{N}{2}}|\Sigma_0|^{\frac{1}{2}}(2\pi)^{\fr
 \right]\\
 \end{align}\]</div>
 <p>We can compare the exponent terms directly. We get the following results by doing that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d77a407d-b158-4217-a9f8-bfe7d47fd067">
-<span class="eqno">(28)<a class="headerlink" href="#equation-d77a407d-b158-4217-a9f8-bfe7d47fd067" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-83ab1495-95c6-4cb8-af43-d81e7db8ae7d">
+<span class="eqno">(28)<a class="headerlink" href="#equation-83ab1495-95c6-4cb8-af43-d81e7db8ae7d" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \Sigma^{-1} &amp;= \Sigma_0^{-1} + \Sigma_1^{-1}\\
 \Sigma &amp;= \left(\Sigma_0^{-1} + \Sigma_1^{-1}\right)^{-1}\\
 \\
@@ -1076,8 +1081,8 @@ f(x)g(x) &amp;= \frac{1}{(2\pi)^{\frac{N}{2}}|\Sigma_0|^{\frac{1}{2}}(2\pi)^{\fr
 \boldsymbol{\mu} &amp;= \Sigma\left(\Sigma_0^{-1}\boldsymbol{\mu}_0 + \Sigma_1^{-1}\boldsymbol{\mu}_1\right)
 \end{align}\]</div>
 <p>Now, solving for the normalizing constant <span class="math notranslate nohighlight">\(c\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9d04f463-568a-4e51-aeed-a57d483fe601">
-<span class="eqno">(29)<a class="headerlink" href="#equation-9d04f463-568a-4e51-aeed-a57d483fe601" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-93a8e52c-eca8-4b96-924a-82f8bae2ff90">
+<span class="eqno">(29)<a class="headerlink" href="#equation-93a8e52c-eca8-4b96-924a-82f8bae2ff90" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{c}{(2\pi)^{\frac{N}{2}}|\Sigma|^{\frac{1}{2}}} &amp;= \frac{1}{(2\pi)^{\frac{N}{2}}|\Sigma_0|^{\frac{1}{2}}(2\pi)^{\frac{N}{2}}|\Sigma_1|^{\frac{1}{2}}}\\
 c &amp;=  \frac{|\Sigma|^{\frac{1}{2}}}{(2\pi)^{\frac{N}{2}}|\Sigma_0|^{\frac{1}{2}}|\Sigma_1|^{\frac{1}{2}}}
 \end{align}\]</div>
