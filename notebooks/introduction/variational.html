@@ -1157,7 +1157,7 @@ and distribution_b type Normal
             <span class="n">n_samples</span><span class="p">,</span>
         <span class="p">],</span>
     <span class="p">)</span>
-    <span class="n">sample_set</span> <span class="o">=</span> <span class="n">q_loc</span> <span class="o">+</span> <span class="n">scale</span> <span class="o">*</span> <span class="n">sample_set</span>
+    <span class="n">sample_set</span> <span class="o">=</span> <span class="n">q_loc</span> <span class="o">+</span> <span class="n">q_scale</span> <span class="o">*</span> <span class="n">sample_set</span>
     <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">log_prob</span><span class="p">(</span><span class="n">sample_set</span><span class="p">)</span> <span class="o">-</span> <span class="n">p</span><span class="o">.</span><span class="n">log_prob</span><span class="p">(</span><span class="n">sample_set</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1190,9 +1190,8 @@ and distribution_b type Normal
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@jax</span><span class="o">.</span><span class="n">jit</span>
-<span class="k">def</span> <span class="nf">kl_reparam</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">kl_reparam</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">PRNGKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)):</span>
     <span class="n">q_loc</span><span class="p">,</span> <span class="n">q_scale</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;loc&quot;</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;scale&quot;</span><span class="p">]</span>
-    <span class="n">key</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">PRNGKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">q</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">q_loc</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">q_scale</span><span class="p">)</span>
     <span class="n">std_normal</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
     <span class="n">sample_set</span> <span class="o">=</span> <span class="n">std_normal</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
@@ -1245,9 +1244,9 @@ and distribution_b type Normal
 
 <span class="n">num_iter</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">costs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">num_iter</span><span class="p">)</span>
-
+<span class="n">key</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">PRNGKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_iter</span><span class="p">):</span>
-    <span class="n">cost_val</span> <span class="o">=</span> <span class="n">kl_reparam</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+    <span class="n">cost_val</span> <span class="o">=</span> <span class="n">kl_reparam</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">cost_val</span>
     <span class="n">grads</span> <span class="o">=</span> <span class="n">grad_loss</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
     <span class="n">updates</span><span class="p">,</span> <span class="n">opt_state</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">grads</span><span class="p">,</span> <span class="n">opt_state</span><span class="p">)</span>
